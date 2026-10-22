@@ -51,33 +51,27 @@ I am especially interested in environments where engineering, product thinking, 
 ### WHAT DRIVES ME
 
 <table>
-<tr>
-<td align="center">
+<tr><td align="center">
 
 **01 · ENGINEERING**
 
 Software development, debugging, and structured problem-solving.
 
-</td>
-</tr>
-<tr>
-<td align="center">
+</td></tr>
+<tr><td align="center">
 
 **02 · AI & DATA**
 
 Machine-learning experimentation and data-driven approaches.
 
-</td>
-</tr>
-<tr>
-<td align="center">
+</td></tr>
+<tr><td align="center">
 
 **03 · OWNERSHIP**
 
 Initiative, collaboration, and solutions designed around real needs.
 
-</td>
-</tr>
+</td></tr>
 </table>
 
 </td>
@@ -87,15 +81,6 @@ Initiative, collaboration, and solutions designed around real needs.
 ---
 
 ## `02` — EXPERIENCE
-
-<table>
-<tr>
-<td width="8%" valign="top" align="center">
-
-<img src="https://img.shields.io/badge/01-06B6D4?style=flat-square" alt="Experience 1"/>
-
-</td>
-<td valign="top">
 
 ### BRASA · Technology Team
 
@@ -109,10 +94,6 @@ Contributing to an internal software product designed to support report-generati
 - Connect technical investigation with the needs of the product and its users.
 
 <sub>The project is internal, so confidential source code and implementation details are not included in this public portfolio.</sub>
-
-</td>
-</tr>
-</table>
 
 ---
 
@@ -129,7 +110,7 @@ Contributing to an internal software product designed to support report-generati
 
 <table>
 <tr>
-<td width="58%" valign="top">
+<td width="60%" valign="top">
 
 ARM-ALPHA explores how environmental sound recognition can provide additional environmental awareness for people with hearing impairments.
 
@@ -147,15 +128,19 @@ The project combines machine-learning experimentation with an assistive hardware
 The challenge is not only to classify sound, but to consider how model output can become useful feedback in an assistive experience.
 
 </td>
-<td width="42%" valign="middle" align="center">
+<td width="40%" valign="middle" align="center">
 
 <img src="https://skillicons.dev/icons?i=python,raspberrypi&theme=dark" alt="Python and Raspberry Pi" width="170"/>
 
 <br/><br/>
 
 <a href="https://github.com/murilomatutino/urban-yamnet">
-<img src="https://img.shields.io/badge/EXPLORE%20PROJECT-181717?style=for-the-badge&logo=github&logoColor=white" alt="Explore ARM-ALPHA repository"/>
+<img src="https://img.shields.io/badge/VIEW%20SOURCE%20CODE-181717?style=for-the-badge&logo=github&logoColor=white" alt="View ARM-ALPHA source code"/>
 </a>
+
+<br/><br/>
+
+<a href="https://github.com/murilomatutino/urban-yamnet">Open repository →</a>
 
 <br/><br/>
 
@@ -192,8 +177,12 @@ A project focused on organizing inventory information and supporting stock-manag
 <br/><br/>
 
 <a href="https://github.com/Bree-TIstudent/estoque_python">
-<img src="https://img.shields.io/badge/EXPLORE%20PROJECT-181717?style=for-the-badge&logo=github&logoColor=white" alt="Explore inventory project repository"/>
+<img src="https://img.shields.io/badge/VIEW%20SOURCE%20CODE-181717?style=for-the-badge&logo=github&logoColor=white" alt="View inventory management source code"/>
 </a>
+
+<br/><br/>
+
+<a href="https://github.com/Bree-TIstudent/estoque_python">Open repository →</a>
 
 </div>
 
@@ -250,9 +239,17 @@ As founder and technology lead, I connect educational needs with digital resourc
 
 Technology becomes more valuable when it is accessible, understandable, and connected to the needs of the people using it.
 
+<div align="center">
+
 <a href="https://github.com/murilomatutino/mprova">
-<img src="https://img.shields.io/badge/EXPLORE%20PROJECT-181717?style=for-the-badge&logo=github&logoColor=white" alt="Explore MPROVA repository"/>
+<img src="https://img.shields.io/badge/VIEW%20SOURCE%20CODE-181717?style=for-the-badge&logo=github&logoColor=white" alt="View MPROVA source code"/>
 </a>
+
+<br/><br/>
+
+<a href="https://github.com/murilomatutino/mprova">Open repository →</a>
+
+</div>
 
 #### MPROVA website · Visual walkthrough
 
@@ -471,7 +468,7 @@ I'm interested in opportunities to learn from strong engineering teams, contribu
 <tr>
 <td align="center" width="33%">
 
-<a href="https://github.com/tabatajhenice" target="_blank">
+<a href="https://github.com/tabatajhenice">
 <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="Open my GitHub profile"/>
 </a>
 
@@ -484,7 +481,7 @@ I'm interested in opportunities to learn from strong engineering teams, contribu
 </td>
 <td align="center" width="33%">
 
-<a href="https://www.linkedin.com/in/tabatajhenice/" target="_blank">
+<a href="https://www.linkedin.com/in/tabatajhenice/">
 <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="Open my LinkedIn profile"/>
 </a>
 
@@ -519,7 +516,7 @@ I'm interested in opportunities to learn from strong engineering teams, contribu
 <strong>jhenicefranca@gmail.com</strong>
 </a>
 
-<br/>
+<br/><br/>
 
 <a href="https://mail.google.com/mail/?view=cm&fs=1&to=jhenicefranca%40gmail.com&su=Professional%20Opportunity%20%7C%20Tabata%20Franca&body=Hello%20Tabata%2C%0A%0AI%20came%20across%20your%20GitHub%20portfolio%20and%20would%20like%20to%20connect.%0A%0ABest%20regards%2C" target="_blank">
 <img src="https://img.shields.io/badge/OPEN%20GMAIL-Compose%20an%20email-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Open Gmail compose with Tábata's email address"/>
@@ -538,5 +535,4 @@ I'm interested in opportunities to learn from strong engineering teams, contribu
 <img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:06B6D4,50:14213D,100:080B16&height=120&section=footer" alt="Decorative footer"/>
 
 </div>
-
 
