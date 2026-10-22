@@ -1,271 +1,2476 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tábata França — Software engineering, AI and product thinking</title>
-<meta name="description" content="Informatics student at IFBA building software, machine-learning projects and educational technology.">
-<meta name="theme-color" content="#0a1020">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Tábata França — Software engineering, AI and product thinking">
-<meta property="og:description" content="Informatics student at IFBA. Software, machine learning and educational technology, with projects in accessibility and public schools.">
-<meta property="og:url" content="https://tabatajhenice.github.io/tabatajhenice/">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a1020'/%3E%3Cpath d='M8 34h8l6-18 10 34 8-26 5 10h11' fill='none' stroke='%2322d3ee' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
-<style>
-:root{--bg:#0a1020;--panel:#0f1830;--line:#1e2b4a;--text:#e6edf7;--mute:#92a3c0;--acc:#22d3ee;--acc2:#0a66c2;
---d:'Bricolage Grotesque','Segoe UI',system-ui,sans-serif;--b:'IBM Plex Sans','Segoe UI',system-ui,sans-serif}
-*{box-sizing:border-box;margin:0}
-html{scroll-behavior:smooth;scroll-padding-top:72px}
-body{background:var(--bg);color:var(--text);font:400 17px/1.65 var(--b);-webkit-font-smoothing:antialiased}
-a{color:inherit}
-:focus-visible{outline:2px solid var(--acc);outline-offset:3px;border-radius:4px}
-.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
-nav{position:sticky;top:0;z-index:5;background:rgba(10,16,32,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
-nav b{font:700 18px var(--d)}
-nav ul{display:flex;gap:26px;list-style:none;padding:0}
-nav ul a{text-decoration:none;color:var(--mute);font-size:15px}
-nav ul a:hover{color:var(--text)}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:8px;font:500 15px var(--b);text-decoration:none;border:1px solid var(--line);color:var(--text);transition:background .2s,border-color .2s}
-button.btn{cursor:pointer;background:transparent}
-.btn:hover{border-color:var(--acc);background:rgba(34,211,238,.08)}
-.btn.p{background:var(--acc);border-color:var(--acc);color:#04202a}
-.btn.p:hover{background:#67e8f9}
-.hero{padding:76px 0 0}
-h1{font:700 clamp(36px,6.4vw,68px)/1.04 var(--d);letter-spacing:-.025em;max-width:15em}
-.lead{color:var(--mute);max-width:36em;margin:22px 0 30px;font-size:19px}
-.cta{display:flex;flex-wrap:wrap;gap:12px}
-#wave{display:block;width:100%;height:150px;margin-top:56px}
-.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.facts div{padding:26px 22px 26px 0}
-.facts strong{display:block;font:700 40px/1 var(--d);color:var(--acc)}
-.facts span{color:var(--mute);font-size:15px}
-section{padding:84px 0 0}
-.row{display:grid;grid-template-columns:230px 1fr;gap:40px}
-.row>h2{font:700 28px/1.2 var(--d);position:sticky;top:84px;align-self:start}
-h3{font:700 24px/1.25 var(--d);margin-bottom:6px}
-p+p{margin-top:14px}
-.mute{color:var(--mute)}
-ul.l{padding:0;list-style:none;margin:14px 0}
-ul.l li{padding:5px 0 5px 22px;position:relative}
-ul.l li:before{content:"";position:absolute;left:0;top:.95em;width:10px;height:2px;background:var(--acc)}
-.pills{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 18px}
-.pills span{padding:3px 12px;border-radius:99px;background:var(--panel);border:1px solid var(--line);font-size:14px;color:var(--mute)}
-.proj{padding:44px 0;border-top:1px solid var(--line)}
-.proj:first-child{border-top:0;padding-top:0}
-blockquote{border-left:3px solid var(--acc);padding:2px 0 2px 18px;margin:18px 0;color:var(--mute);font-style:italic}
-.flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:0;margin:20px 0}
-.flow div{flex:1 1 130px;background:var(--panel);border:1px solid var(--line);padding:14px;font-size:14.5px;position:relative;margin-right:22px;border-radius:8px}
-.flow div:last-child{margin-right:0}
-.flow div:not(:last-child):after{content:"";position:absolute;right:-17px;top:50%;border:6px solid transparent;border-left:9px solid var(--acc);transform:translateY(-50%)}
-.flow b{display:block;font-weight:500;color:var(--text)}
-.frame{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--panel);margin:20px 0 22px}
-.frame i{display:block;height:30px;background:#0b1328;border-bottom:1px solid var(--line);background-image:radial-gradient(circle,#3a4a6e 4px,transparent 5px);background-size:20px 30px;background-repeat:repeat-x;background-position:8px 0;width:100%;background-repeat:no-repeat}
-.frame img{display:block;width:100%}
-.acro{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin:16px 0}
-.acro div{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:12px 4px;text-align:center;font-size:12.5px;color:var(--mute);overflow-wrap:anywhere}
-.acro b{display:block;font:700 30px/1.1 var(--d);color:var(--acc)}
-.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:18px 0 24px}
-.gal button{padding:0;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--panel);cursor:zoom-in;aspect-ratio:3/4}
-.gal img{width:100%;height:100%;object-fit:cover;object-position:top;display:block;transition:transform .3s}
-.gal button:hover img{transform:scale(1.04)}
-dialog{border:0;background:transparent;max-width:92vw;max-height:92vh;padding:0}
-dialog::backdrop{background:rgba(4,8,18,.9)}
-dialog img{max-width:92vw;max-height:88vh;border-radius:10px;display:block}
-.two{display:grid;grid-template-columns:1fr 1fr;gap:40px}
-.two h3{font-size:20px;margin-bottom:14px}
-.item{padding:14px 0;border-top:1px solid var(--line)}
-.item b{display:block;font-weight:500}
-.item span{color:var(--mute);font-size:15.5px}
-.skills .item{display:grid;grid-template-columns:170px 1fr;gap:16px}
-.steps{counter-reset:s}
-.steps .item{display:grid;grid-template-columns:150px 1fr;gap:16px}
-.steps b{font:700 19px var(--d)}
-.steps b:before{counter-increment:s;content:counter(s) ". ";color:var(--acc)}
-.contact{padding:84px 0}
-.contact h2{font:700 clamp(30px,5vw,48px)/1.1 var(--d);max-width:14em;margin-bottom:16px}
-.addr{user-select:all}
-footer{border-top:1px solid var(--line);padding:26px 0;color:var(--mute);font-size:14.5px}
-@media(max-width:760px){.row,.two{grid-template-columns:1fr;gap:20px}.row>h2{position:static}
-nav ul{gap:16px}nav ul li:nth-child(n+3){display:none}.skills .item,.steps .item{grid-template-columns:1fr;gap:2px}
-.acro{grid-template-columns:repeat(3,1fr)}.gal{grid-template-columns:repeat(2,1fr)}.flow div{margin:0 0 22px}
-.flow div:not(:last-child):after{right:auto;left:50%;top:auto;bottom:-17px;transform:translateX(-50%);border-left:6px solid transparent;border-top:9px solid var(--acc);border-right:6px solid transparent;border-bottom:0}}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Tabata França | Software, AI & Product Engineering</title>
+  <meta name="description" content="Tabata França — Informatics student at IFBA working on software engineering, AI, assistive technology and educational innovation.">
+  <meta name="theme-color" content="#080d1b">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Tabata França | Software, AI & Product Engineering">
+  <meta property="og:description" content="Building technology with purpose through software, artificial intelligence and accessible education.">
+  <meta property="og:url" content="https://tabatajhenice.github.io/tabatajhenice/">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23080d1b'/%3E%3Cpath d='M12 32h10l7-17 9 34 7-23 4 6h5' fill='none' stroke='%2360a5fa' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #080d1b;
+      --bg-soft: #0b1224;
+      --panel: rgba(17, 27, 49, .78);
+      --panel-solid: #111b31;
+      --line: rgba(148, 177, 225, .15);
+      --line-bright: rgba(96, 165, 250, .4);
+      --text: #f0f5ff;
+      --muted: #9aaac5;
+      --blue: #60a5fa;
+      --cyan: #67e8f9;
+      --blue-dark: #2563eb;
+      --heading: "Manrope", sans-serif;
+      --body: "Manrope", sans-serif;
+      --mono: "DM Mono", monospace;
+      --radius: 18px;
+      --max: 1120px;
+      --shadow: 0 24px 70px rgba(0, 0, 0, .24);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(ellipse at 75% 4%, rgba(37, 99, 235, .13), transparent 33rem),
+        radial-gradient(ellipse at 0% 35%, rgba(34, 211, 238, .045), transparent 28rem),
+        var(--bg);
+      color: var(--text);
+      font: 400 15px/1.8 var(--body);
+      -webkit-font-smoothing: antialiased;
+      overflow-wrap: anywhere;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      background-image: radial-gradient(rgba(148, 177, 225, .12) .7px, transparent .7px);
+      background-size: 25px 25px;
+      opacity: .24;
+      mask-image: linear-gradient(to bottom, black, transparent 75%);
+    }
+
+    a {
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    button, a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    button, input {
+      font: inherit;
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--cyan);
+      outline-offset: 5px;
+    }
+
+    ::selection {
+      background: rgba(96, 165, 250, .35);
+      color: white;
+    }
+
+    .wrap {
+      width: min(var(--max), calc(100% - 48px));
+      margin-inline: auto;
+    }
+
+    .mono {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .accent {
+      color: var(--blue);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--cyan);
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 24px;
+      height: 1px;
+      background: currentColor;
+    }
+
+    /* Navigation */
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid var(--line);
+      background: rgba(8, 13, 27, .82);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+
+    .nav-inner {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--line-bright);
+      border-radius: 12px;
+      background: linear-gradient(145deg, rgba(96, 165, 250, .19), rgba(103, 232, 249, .035));
+      color: var(--cyan);
+      font: 500 14px var(--mono);
+      box-shadow: inset 0 0 20px rgba(96, 165, 250, .06);
+    }
+
+    .brand-name {
+      display: block;
+      font-weight: 800;
+      font-size: 14px;
+      letter-spacing: -.035em;
+    }
+
+    .brand-role {
+      display: block;
+      color: var(--muted);
+      font: 10px var(--mono);
+      margin-top: 2px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: clamp(12px, 2.2vw, 28px);
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 600;
+      transition: color .2s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--cyan);
+    }
+
+    .nav-links .nav-contact {
+      border: 1px solid var(--line-bright);
+      border-radius: 9px;
+      padding: 9px 13px;
+      color: var(--text);
+    }
+
+    .nav-links .nav-contact:hover {
+      background: rgba(96, 165, 250, .1);
+    }
+
+    /* Buttons */
+
+    .btn {
+      min-height: 46px;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      padding: 11px 17px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      color: var(--text);
+      background: rgba(255, 255, 255, .018);
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 700;
+      transition: transform .2s, background .2s, border-color .2s, box-shadow .2s;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      border-color: var(--line-bright);
+      background: rgba(96, 165, 250, .08);
+    }
+
+    .btn-primary {
+      color: #06101e;
+      background: linear-gradient(120deg, var(--cyan), var(--blue));
+      border-color: transparent;
+      box-shadow: 0 8px 30px rgba(59, 130, 246, .16);
+    }
+
+    .btn-primary:hover {
+      background: linear-gradient(120deg, #a5f3fc, #93c5fd);
+      border-color: transparent;
+      box-shadow: 0 12px 35px rgba(59, 130, 246, .23);
+    }
+
+    .btn svg {
+      width: 15px;
+      height: 15px;
+      flex-shrink: 0;
+    }
+
+    /* Hero */
+
+    .hero {
+      padding-top: 100px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.45fr) minmax(240px, .7fr);
+      align-items: center;
+      gap: 55px;
+    }
+
+    .hero h1 {
+      max-width: 780px;
+      margin: 25px 0 20px;
+      font: 800 clamp(43px, 6.4vw, 76px)/1.08 var(--heading);
+      letter-spacing: -.075em;
+    }
+
+    .hero h1 .gradient {
+      background: linear-gradient(105deg, #f0f5ff 0%, #93c5fd 43%, #67e8f9 100%);
+      color: transparent;
+      background-clip: text;
+      -webkit-background-clip: text;
+    }
+
+    .hero-description {
+      max-width: 590px;
+      color: var(--muted);
+      font-size: clamp(14px, 1.5vw, 16px);
+      line-height: 1.95;
+    }
+
+    .hero-description strong {
+      color: #dce9ff;
+      font-weight: 700;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 11px;
+      margin-top: 30px;
+    }
+
+    .hero-note {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 28px;
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #4ade80;
+      box-shadow: 0 0 13px rgba(74, 222, 128, .6);
+      flex-shrink: 0;
+    }
+
+    /* Decorative code panel */
+
+    .code-card {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--line-bright);
+      border-radius: 18px;
+      background:
+        radial-gradient(ellipse at 90% 5%, rgba(96, 165, 250, .15), transparent 65%),
+        rgba(11, 19, 37, .88);
+      box-shadow: var(--shadow), inset 0 1px rgba(255,255,255,.035);
+      transform: rotate(1deg);
+    }
+
+    .code-card::after {
+      content: "";
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      right: -90px;
+      bottom: -100px;
+      border: 1px solid rgba(96, 165, 250, .2);
+      border-radius: 50%;
+      box-shadow: 0 0 0 20px rgba(96, 165, 250, .025), 0 0 0 40px rgba(96, 165, 250, .02);
+      pointer-events: none;
+    }
+
+    .code-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 15px 17px;
+      border-bottom: 1px solid var(--line);
+      color: var(--muted);
+      font: 10px var(--mono);
+    }
+
+    .window-dots {
+      display: flex;
+      gap: 5px;
+    }
+
+    .window-dots span {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #30415e;
+    }
+
+    .window-dots span:first-child { background: #f87171; }
+    .window-dots span:nth-child(2) { background: #fbbf24; }
+    .window-dots span:nth-child(3) { background: #4ade80; }
+
+    .code-content {
+      padding: 24px 20px 26px;
+      font: 11px/2.1 var(--mono);
+      color: #a9bad5;
+      position: relative;
+      z-index: 1;
+    }
+
+    .code-line {
+      display: block;
+      white-space: pre-wrap;
+    }
+
+    .code-number {
+      display: inline-block;
+      width: 25px;
+      color: #40516e;
+      user-select: none;
+    }
+
+    .code-purple { color: #c4b5fd; }
+    .code-blue { color: #93c5fd; }
+    .code-green { color: #86efac; }
+    .code-cyan { color: #67e8f9; }
+    .code-orange { color: #fdba74; }
+
+    .code-divider {
+      height: 1px;
+      background: var(--line);
+      margin: 18px 0;
+    }
+
+    .code-status {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--muted);
+      font-size: 10px;
+    }
+
+    .code-status .status-dot {
+      width: 6px;
+      height: 6px;
+    }
+
+    /* Wave */
+
+    .wave-wrap {
+      position: relative;
+      margin-top: 65px;
+      border-block: 1px solid var(--line);
+      background: linear-gradient(90deg, transparent, rgba(37, 99, 235, .045), transparent);
+    }
+
+    #wave {
+      width: 100%;
+      height: 100px;
+      display: block;
+    }
+
+    .wave-label {
+      position: absolute;
+      top: 12px;
+      left: 0;
+      color: #7185a7;
+      font: 9px var(--mono);
+      letter-spacing: .1em;
+    }
+
+    /* Stats */
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .stat {
+      padding: 29px 22px 30px 0;
+      position: relative;
+    }
+
+    .stat:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      top: 31px;
+      right: 23px;
+      bottom: 31px;
+      width: 1px;
+      background: var(--line);
+    }
+
+    .stat-value {
+      display: block;
+      font: 800 clamp(28px, 3.4vw, 42px)/1.2 var(--heading);
+      letter-spacing: -.06em;
+      color: var(--text);
+    }
+
+    .stat-value span {
+      color: var(--blue);
+    }
+
+    .stat-label {
+      display: block;
+      max-width: 175px;
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.7;
+    }
+
+    /* Sections */
+
+    .section {
+      padding-top: 115px;
+    }
+
+    .section-heading {
+      display: grid;
+      grid-template-columns: .7fr 1.3fr;
+      align-items: start;
+      gap: 50px;
+      margin-bottom: 38px;
+    }
+
+    .section-title {
+      margin: 12px 0 0;
+      font: 800 clamp(27px, 3.5vw, 40px)/1.2 var(--heading);
+      letter-spacing: -.055em;
+    }
+
+    .section-intro {
+      max-width: 630px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.95;
+    }
+
+    /* About */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 18px;
+    }
+
+    .glass-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: linear-gradient(145deg, rgba(17, 27, 49, .85), rgba(11, 18, 36, .74));
+      box-shadow: inset 0 1px rgba(255,255,255,.02);
+    }
+
+    .about-main {
+      padding: 30px;
+    }
+
+    .about-main h3 {
+      margin: 15px 0 12px;
+      font: 800 22px/1.4 var(--heading);
+      letter-spacing: -.04em;
+    }
+
+    .about-main p {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 2;
+    }
+
+    .about-main p + p {
+      margin-top: 14px;
+    }
+
+    .about-side {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .mini-card {
+      flex: 1;
+      padding: 20px;
+      transition: border-color .2s, transform .2s;
+    }
+
+    .mini-card:hover {
+      border-color: var(--line-bright);
+      transform: translateY(-3px);
+    }
+
+    .mini-icon {
+      width: 35px;
+      height: 35px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: rgba(96, 165, 250, .08);
+      color: var(--cyan);
+      font: 13px var(--mono);
+    }
+
+    .mini-card h4 {
+      margin: 12px 0 4px;
+      font-size: 13px;
+    }
+
+    .mini-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.8;
+    }
+
+    /* Experience */
+
+    .experience-card {
+      padding: 30px;
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 35px;
+    }
+
+    .experience-company {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      margin-bottom: 24px;
+    }
+
+    .company-mark {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      border-radius: 13px;
+      border: 1px solid var(--line-bright);
+      background: rgba(96, 165, 250, .1);
+      color: var(--cyan);
+      font: 14px var(--mono);
+    }
+
+    .experience-company h3 {
+      margin: 0;
+      font-size: 18px;
+    }
+
+    .experience-company p {
+      margin: 3px 0 0;
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .experience-card h4 {
+      margin: 0 0 10px;
+      font-size: 13px;
+    }
+
+    .experience-card p {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.95;
+    }
+
+    .bullet-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .bullet-list li {
+      position: relative;
+      padding: 9px 0 9px 20px;
+      border-bottom: 1px solid rgba(148, 177, 225, .08);
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    .bullet-list li::before {
+      content: "↗";
+      position: absolute;
+      left: 0;
+      top: 9px;
+      color: var(--blue);
+      font-family: var(--mono);
+    }
+
+    .confidential {
+      padding: 11px 13px;
+      border: 1px solid var(--line);
+      border-radius: 9px;
+      background: rgba(96, 165, 250, .035);
+      font: 10px/1.8 var(--mono);
+      color: #8194b4;
+      margin-top: 18px;
+    }
+
+    /* Project cards */
+
+    .project-list {
+      display: grid;
+      gap: 20px;
+    }
+
+    .project {
+      position: relative;
+      overflow: hidden;
+      padding: 30px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: linear-gradient(145deg, rgba(17, 27, 49, .84), rgba(10, 17, 34, .78));
+      transition: transform .25s, border-color .25s, box-shadow .25s;
+    }
+
+    .project:hover {
+      transform: translateY(-3px);
+      border-color: var(--line-bright);
+      box-shadow: 0 22px 60px rgba(0, 0, 0, .18);
+    }
+
+    .project::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 30px;
+      right: 30px;
+      height: 1px;
+      background: linear-gradient(90deg, var(--blue), transparent 80%);
+      opacity: .65;
+    }
+
+    .project-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    .project-number {
+      display: block;
+      color: var(--cyan);
+      font: 10px var(--mono);
+      letter-spacing: .1em;
+      margin-bottom: 8px;
+    }
+
+    .project h3 {
+      margin: 0;
+      font: 800 clamp(21px, 3vw, 29px)/1.3 var(--heading);
+      letter-spacing: -.05em;
+    }
+
+    .project-subtitle {
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 6px;
+    }
+
+    .project-mark {
+      display: grid;
+      place-items: center;
+      width: 47px;
+      height: 47px;
+      flex-shrink: 0;
+      border: 1px solid var(--line-bright);
+      border-radius: 14px;
+      color: var(--cyan);
+      background: linear-gradient(140deg, rgba(96,165,250,.12), rgba(103,232,249,.035));
+      font: 14px var(--mono);
+    }
+
+    .pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin: 14px 0 20px;
+    }
+
+    .pills span {
+      padding: 5px 10px;
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      background: rgba(96, 165, 250, .035);
+      color: #b1c3df;
+      font: 10px var(--mono);
+    }
+
+    .project-description {
+      max-width: 800px;
+      color: #b0bfd6;
+      font-size: 13px;
+      line-height: 2;
+    }
+
+    .project-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      align-items: start;
+      margin-top: 24px;
+    }
+
+    .project-visual {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      background: #0a1225;
+    }
+
+    .project-visual img {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      transition: transform .4s;
+    }
+
+    .project-visual:hover img {
+      transform: scale(1.015);
+    }
+
+    .visual-caption {
+      padding: 10px 12px;
+      color: var(--muted);
+      font: 10px var(--mono);
+      border-top: 1px solid var(--line);
+    }
+
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 9px;
+      margin: 20px 0;
+    }
+
+    .flow-step {
+      padding: 13px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: rgba(5, 11, 24, .35);
+    }
+
+    .flow-step b {
+      display: block;
+      margin-bottom: 4px;
+      color: #e3edff;
+      font-size: 11px;
+    }
+
+    .flow-step span {
+      color: var(--muted);
+      font-size: 10px;
+      line-height: 1.7;
+    }
+
+    .project-quote {
+      margin: 20px 0;
+      padding: 14px 17px;
+      border-left: 2px solid var(--blue);
+      background: rgba(96, 165, 250, .04);
+      color: #9db2d2;
+      font-size: 12px;
+      font-style: italic;
+      line-height: 1.9;
+    }
+
+    .project-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 22px;
+    }
+
+    .project-links .btn {
+      min-height: 40px;
+      padding: 9px 13px;
+      font-size: 11px;
+    }
+
+    /* MPROVA acronym */
+
+    .acro {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 7px;
+      margin: 22px 0;
+    }
+
+    .acro div {
+      min-width: 0;
+      padding: 12px 4px;
+      border: 1px solid var(--line);
+      border-radius: 9px;
+      background: rgba(96, 165, 250, .035);
+      text-align: center;
+      color: var(--muted);
+      font-size: 9px;
+      overflow-wrap: anywhere;
+    }
+
+    .acro b {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--cyan);
+      font: 800 24px/1.2 var(--heading);
+    }
+
+    .project-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin: 22px 0;
+    }
+
+    .project-metric {
+      padding: 15px;
+      border: 1px solid var(--line);
+      border-radius: 11px;
+      background: rgba(96, 165, 250, .035);
+    }
+
+    .project-metric strong {
+      display: block;
+      font: 800 23px var(--heading);
+      color: var(--blue);
+      letter-spacing: -.04em;
+    }
+
+    .project-metric span {
+      display: block;
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: 10px;
+      line-height: 1.7;
+    }
+
+    /* Gallery */
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .gallery button {
+      display: block;
+      overflow: hidden;
+      padding: 0;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: var(--panel-solid);
+      cursor: zoom-in;
+    }
+
+    .gallery img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      object-position: top;
+      transition: transform .3s, opacity .3s;
+    }
+
+    .gallery button:hover img {
+      transform: scale(1.035);
+      opacity: .85;
+    }
+
+    dialog {
+      width: auto;
+      max-width: min(92vw, 1000px);
+      max-height: 92vh;
+      padding: 0;
+      border: 1px solid var(--line-bright);
+      border-radius: 14px;
+      background: #080d1b;
+      box-shadow: var(--shadow);
+    }
+
+    dialog::backdrop {
+      background: rgba(2, 5, 13, .88);
+      backdrop-filter: blur(8px);
+    }
+
+    dialog img {
+      display: block;
+      max-width: 88vw;
+      max-height: 84vh;
+      object-fit: contain;
+    }
+
+    .dialog-close {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      border: 0;
+      border-top: 1px solid var(--line);
+      background: #0b1224;
+      color: var(--text);
+      cursor: pointer;
+      font-size: 11px;
+    }
+
+    /* Leadership and awards */
+
+    .two-col {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .list-card {
+      padding: 25px;
+    }
+
+    .list-card h3 {
+      margin: 0 0 12px;
+      font-size: 17px;
+    }
+
+    .list-item {
+      padding: 16px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .list-item strong {
+      display: block;
+      font-size: 12px;
+      line-height: 1.7;
+    }
+
+    .list-item p {
+      margin: 5px 0 0;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.8;
+    }
+
+    /* Skills */
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .skill-card {
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      background: rgba(17, 27, 49, .52);
+      transition: border-color .2s, background .2s;
+    }
+
+    .skill-card:hover {
+      border-color: var(--line-bright);
+      background: rgba(17, 27, 49, .82);
+    }
+
+    .skill-card h3 {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 12px;
+      font-size: 13px;
+    }
+
+    .skill-card h3 span {
+      color: var(--cyan);
+      font: 11px var(--mono);
+    }
+
+    .skill-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 2;
+    }
+
+    .skill-note {
+      margin-top: 17px;
+      color: #7f92b2;
+      font-size: 11px;
+    }
+
+    /* Workflow */
+
+    .workflow {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 10px;
+      counter-reset: workflow;
+    }
+
+    .workflow-card {
+      counter-increment: workflow;
+      padding: 20px 16px;
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      background: rgba(17, 27, 49, .55);
+    }
+
+    .workflow-card::before {
+      content: "0" counter(workflow);
+      display: block;
+      color: var(--blue);
+      font: 11px var(--mono);
+      margin-bottom: 24px;
+    }
+
+    .workflow-card h3 {
+      font-size: 13px;
+      margin: 0 0 9px;
+    }
+
+    .workflow-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 10px;
+      line-height: 1.9;
+    }
+
+    /* Contact */
+
+    .contact-section {
+      padding: 115px 0 80px;
+    }
+
+    .contact-panel {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(28px, 5vw, 55px);
+      border: 1px solid var(--line-bright);
+      border-radius: 23px;
+      background:
+        radial-gradient(ellipse at 90% 0%, rgba(37, 99, 235, .18), transparent 50%),
+        linear-gradient(135deg, rgba(17, 27, 49, .94), rgba(8, 15, 30, .95));
+    }
+
+    .contact-panel::after {
+      content: "</>";
+      position: absolute;
+      right: 28px;
+      bottom: -45px;
+      color: rgba(96, 165, 250, .06);
+      font: 800 clamp(100px, 16vw, 190px)/1 var(--mono);
+      pointer-events: none;
+    }
+
+    .contact-panel h2 {
+      position: relative;
+      z-index: 1;
+      max-width: 650px;
+      margin: 18px 0 15px;
+      font: 800 clamp(31px, 5vw, 52px)/1.18 var(--heading);
+      letter-spacing: -.065em;
+    }
+
+    .contact-panel > p {
+      position: relative;
+      z-index: 1;
+      max-width: 600px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 2;
+    }
+
+    .contact-actions {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 25px;
+    }
+
+    .email-line {
+      position: relative;
+      z-index: 1;
+      display: inline-flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .email-line a {
+      color: var(--cyan);
+      text-decoration: none;
+      user-select: all;
+    }
+
+    .email-line a:hover {
+      text-decoration: underline;
+    }
+
+    /* Footer */
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 25px 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .footer-inner p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 10px;
+    }
+
+    .back-top {
+      color: var(--cyan);
+      text-decoration: none;
+      font: 10px var(--mono);
+    }
+
+    /* Reveal animation */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Responsive */
+
+    @media (min-width: 1500px) {
+      .hero { padding-top: 125px; }
+    }
+
+    @media (max-width: 850px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .code-card {
+        max-width: 520px;
+        transform: none;
+      }
+
+      .hero h1 {
+        max-width: 700px;
+      }
+
+      .section-heading {
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+
+      .experience-card {
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+
+      .workflow {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .workflow-card::before {
+        margin-bottom: 15px;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .wrap {
+        width: min(100% - 32px, var(--max));
+      }
+
+      .nav-inner {
+        min-height: 66px;
+        flex-wrap: wrap;
+        padding-block: 10px;
+        gap: 12px;
+      }
+
+      .brand-mark {
+        width: 34px;
+        height: 34px;
+      }
+
+      .brand-role {
+        font-size: 9px;
+      }
+
+      .nav-links {
+        width: 100%;
+        justify-content: space-between;
+        gap: 8px;
+        padding-bottom: 3px;
+      }
+
+      .nav-links a {
+        font-size: 10px;
+      }
+
+      .nav-links .nav-contact {
+        padding: 6px 9px;
+      }
+
+      html {
+        scroll-padding-top: 110px;
+      }
+
+      .hero {
+        padding-top: 66px;
+      }
+
+      .hero h1 {
+        font-size: clamp(41px, 12vw, 61px);
+      }
+
+      .hero-description {
+        font-size: 13px;
+      }
+
+      .hero-actions .btn {
+        flex: 1 1 auto;
+      }
+
+      .wave-wrap {
+        margin-top: 42px;
+      }
+
+      #wave {
+        height: 82px;
+      }
+
+      .stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .stat {
+        padding: 22px 12px 22px 0;
+      }
+
+      .stat:nth-child(2)::after {
+        display: none;
+      }
+
+      .stat:nth-child(1),
+      .stat:nth-child(2) {
+        border-bottom: 1px solid var(--line);
+      }
+
+      .stat:not(:last-child)::after {
+        right: 12px;
+      }
+
+      .stat-value {
+        font-size: 32px;
+      }
+
+      .section,
+      .contact-section {
+        padding-top: 78px;
+      }
+
+      .section-heading {
+        margin-bottom: 25px;
+      }
+
+      .section-title {
+        font-size: 30px;
+      }
+
+      .about-grid,
+      .two-col,
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-main,
+      .experience-card,
+      .project,
+      .list-card {
+        padding: 21px;
+      }
+
+      .project::before {
+        left: 21px;
+        right: 21px;
+      }
+
+      .project-content {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .project-head {
+        gap: 12px;
+      }
+
+      .project-mark {
+        width: 39px;
+        height: 39px;
+      }
+
+      .acro {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .project-metrics {
+        gap: 7px;
+      }
+
+      .project-metric {
+        padding: 10px;
+      }
+
+      .project-metric strong {
+        font-size: 19px;
+      }
+
+      .project-metric span {
+        font-size: 9px;
+      }
+
+      .gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .workflow {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .workflow-card:last-child {
+        grid-column: 1 / -1;
+      }
+
+      .contact-panel {
+        padding: 25px 20px;
+      }
+
+      .contact-actions .btn {
+        flex: 1 1 140px;
+      }
+
+      .footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
 </head>
-<body>
-<nav><div class="wrap"><b>Tábata França</b>
-<ul><li><a href="#projects">Projects</a></li><li><a href="#recognition">Recognition</a></li><li><a href="#skills">Skills</a></li><li><a href="#contact">Contact</a></li></ul></div></nav>
 
-<header class="hero"><div class="wrap">
-<h1>Turning real-world problems into technology-driven solutions.</h1>
-<p class="lead">I’m an Informatics student at the Federal Institute of Bahia (IFBA), building software, machine-learning projects and educational technology, and working in the technology team at BRASA.</p>
-<div class="cta">
-<a class="btn p" href="#projects">See my projects</a>
-<a class="btn" href="https://www.linkedin.com/in/tabatajhenice/" target="_blank" rel="noopener">LinkedIn</a>
-<a class="btn" href="#contact">Email me</a>
-</div>
-<canvas id="wave" aria-label="Animated sound wave, inspired by the ARM-ALPHA project" role="img"></canvas>
-<div class="facts">
-<div><strong>~95%</strong><span>accuracy reported in ARM-ALPHA experiments</span></div>
-<div><strong>300+</strong><span>people reached through MPROVA materials</span></div>
-<div><strong>30+</strong><span>medalists associated with MPROVA</span></div>
-<div><strong>87%+</strong><span>of votes in the IFBA student election</span></div>
-</div></div></header>
+<body id="top">
 
-<main class="wrap">
-<section id="about"><div class="row"><h2>About</h2><div>
-<p>I focus on software engineering, artificial intelligence and technology that solves meaningful problems. My work sits where <b>building software, understanding users and taking ownership</b> overlap.</p>
-<p class="mute">Through technical projects, educational initiatives and teamwork, I turn needs into practical solutions, learn quickly from experiments and explain technical ideas clearly. I do my best work where engineering, product thinking and customer needs meet.</p>
-</div></div></section>
+  <nav class="nav" aria-label="Main navigation">
+    <div class="wrap nav-inner">
 
-<section id="bring"><div class="row"><h2>What I bring to a team</h2><div>
-<div class="item"><b>I explain technical ideas clearly</b><span>At MPROVA I coordinate work with public schools and turn educational needs into digital resources. As IFBA student representative, I speak for about 500 students.</span></div>
-<div class="item"><b>I investigate before I act</b><span>At BRASA I explore code and backend behavior to understand a problem. In ARM-ALPHA I contributed to refining a model that reached about 95% accuracy in experiments.</span></div>
-<div class="item"><b>I take ownership</b><span>I founded MPROVA and lead its technology, from the educational need to the working website.</span></div>
-<div class="item"><b>I work with feedback</b><span>I use Scrum and Kanban, document decisions and share context so the team can move forward.</span></div>
-</div></div></section>
+      <a class="brand" href="#top" aria-label="Tabata França — home">
+        <span class="brand-mark">TF.</span>
+        <span>
+          <span class="brand-name">Tabata França</span>
+          <span class="brand-role">INFORMATICS · IFBA</span>
+        </span>
+      </a>
 
-<section id="experience"><div class="row"><h2>Experience</h2><div>
-<h3>Software engineering, BRASA</h3>
-<p class="mute">Technology Team · Internal report-generation product</p>
-<ul class="l">
-<li>Implement features and tasks in a shared codebase, within a collaborative engineering team.</li>
-<li>Explore code organization and investigate backend behavior.</li>
-<li>Work from requirements, feedback and delivery priorities.</li>
-<li>Connect technical investigation to the needs of the product and its users.</li></ul>
-<p class="mute" style="font-size:15px">The project is internal, so confidential source code and implementation details are not included here.</p>
-</div></div></section>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#recognition">Recognition</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact" class="nav-contact">Let's connect ↗</a>
+      </div>
 
-<section id="projects"><div class="row"><h2>Selected projects</h2><div>
+    </div>
+  </nav>
 
-<article class="proj">
-<h3>ARM-ALPHA</h3><p class="mute">AI-powered assistive technology</p>
-<div class="pills"><span>Python</span><span>Machine learning</span><span>Audio classification</span><span>Raspberry Pi</span></div>
-<p>ARM-ALPHA explores how environmental sound recognition can give people with hearing impairments more awareness of their surroundings. It pairs machine-learning experiments with an assistive hardware concept that communicates detected sounds through vibration patterns.</p>
-<div class="flow" role="list">
-<div role="listitem"><b>Microphone</b>captures ambient sound</div>
-<div role="listitem"><b>Raspberry Pi</b>runs the model</div>
-<div role="listitem"><b>Classifier</b>trained on UrbanSound8K</div>
-<div role="listitem"><b>Vibration motors</b>signal the detected sound</div></div>
-<ul class="l">
-<li>Built an audio-classification workflow with Python and machine-learning techniques.</li>
-<li>Worked with the UrbanSound8K environmental sound dataset.</li>
-<li>Connected the software experiments to a hardware concept with a Raspberry Pi, microphone and vibration motors.</li>
-<li>Contributed to model development and refinement, with about 95% accuracy reported in project experiments.</li></ul>
-<blockquote>The challenge is not only to classify sound, but to turn model output into useful feedback in an assistive experience.</blockquote>
-<a class="btn" href="https://github.com/murilomatutino/urban-yamnet" target="_blank" rel="noopener">View source code</a>
-</article>
+  <header class="hero">
+    <div class="wrap">
 
-<article class="proj">
-<h3>Inventory Management System</h3><p class="mute">Python application</p>
-<div class="pills"><span>Python</span><span>Programming logic</span><span>Inventory workflows</span></div>
-<p>An application that organizes inventory information and supports stock-management routines.</p>
-<div class="frame"><i></i><img src="./Captura%20de%20tela%202026-10-22%20123344.png" alt="Inventory management system — application screenshot" loading="lazy"></div>
-<ul class="l">
-<li>Applied programming logic to a real operational use case.</li>
-<li>Structured functionality around inventory-related information.</li>
-<li>Explored how an application can support routine management tasks.</li></ul>
-<a class="btn" href="https://github.com/Bree-TIstudent/estoque_python" target="_blank" rel="noopener">View source code</a>
-</article>
+      <div class="hero-grid">
 
-<article class="proj">
-<h3>MPROVA</h3><p class="mute">Educational technology · Founder, President and Technology Lead</p>
-<div class="pills"><span>JavaScript</span><span>TypeScript</span><span>HTML</span><span>CSS</span></div>
-<p>MPROVA is an academic-support and motivation initiative. It expands access to educational resources and to preparation for academic olympiads and exams. I connect educational needs with digital resources and help coordinate work with public schools.</p>
-<div class="acro" aria-label="MPROVA stands for Motivação, Participação, Resolução, Oportunidade, Voluntariado e Apoio">
-<div><b>M</b>Motivação</div><div><b>P</b>Participação</div><div><b>R</b>Resolução</div><div><b>O</b>Oportunidade</div><div><b>V</b>Voluntariado</div><div><b>A</b>Apoio</div></div>
-<p class="mute">5 partner public schools · 300+ people reached through materials · 30+ medalists associated with the initiative.</p>
-<ul class="l">
-<li>Website development and digital resources.</li>
-<li>Project leadership and coordination.</li>
-<li>Educational content and academic support.</li>
-<li>Collaboration with public-school communities.</li></ul>
-<blockquote>Technology is more valuable when it is accessible, understandable and connected to the needs of the people using it.</blockquote>
-<div class="gal">
-<button type="button" aria-label="Open MPROVA website screenshot 1"><img src="./WhatsApp%20Image%202026-10-22%20at%2012.52.11.jpeg" alt="MPROVA website screenshot 1" loading="lazy"></button>
-<button type="button" aria-label="Open MPROVA website screenshot 2"><img src="./WhatsApp%20Image%202026-10-22%20at%2012.52.12.jpeg" alt="MPROVA website screenshot 2" loading="lazy"></button>
-<button type="button" aria-label="Open MPROVA website screenshot 3"><img src="./WhatsApp%20Image%202026-10-22%20at%2012.52.12%20%281%29.jpeg" alt="MPROVA website screenshot 3" loading="lazy"></button>
-<button type="button" aria-label="Open MPROVA website screenshot 4"><img src="./WhatsApp%20Image%202026-10-22%20at%2012.52.12%20%282%29.jpeg" alt="MPROVA website screenshot 4" loading="lazy"></button>
-<button type="button" aria-label="Open MPROVA website screenshot 5"><img src="./WhatsApp%20Image%202026-10-22%20at%2012.52.12%20%283%29.jpeg" alt="MPROVA website screenshot 5" loading="lazy"></button></div>
-<a class="btn" href="https://github.com/murilomatutino/mprova" target="_blank" rel="noopener">View source code</a>
-</article>
-</div></div></section>
+        <div class="reveal">
+          <span class="eyebrow">Engineering ideas into impact</span>
 
-<section id="recognition"><div class="row"><h2>Leadership and recognition</h2><div class="two">
-<div><h3>Leadership</h3>
-<div class="item"><b>Founder and Technology Lead, MPROVA</b><span>Building an educational initiative that connects digital resources, academic support and public-school communities.</span></div>
-<div class="item"><b>Student Representative, IFBA</b><span>Elected by student vote with more than 87% of votes, representing about 500 students.</span></div>
-<div class="item"><b>Technology Team, BRASA</b><span>Collaborating on an internal report-generation product.</span></div></div>
-<div><h3>Recognition</h3>
-<div class="item"><b>AFS Global STEM Academies</b><span>Finalist among more than 7,000 applicants.</span></div>
-<div class="item"><b>National Science Olympiad (ONC)</b><span>Gold medal, top 5%.</span></div>
-<div class="item"><b>Brazilian Mathematics Olympiad (OBMEP)</b><span>Bronze medal and two honorable mentions.</span></div>
-<div class="item"><b>Brazilian Geography Olympiad (OBG)</b><span>Silver medal.</span></div></div>
-</div></div></section>
+          <h1>
+            I build technology for
+            <span class="gradient">real-world problems.</span>
+          </h1>
 
-<section id="skills"><div class="row"><h2>Skills</h2><div class="skills">
-<div class="item"><b>Programming</b><span>Python, JavaScript, TypeScript, Java, C#</span></div>
-<div class="item"><b>Web</b><span>HTML, CSS</span></div>
-<div class="item"><b>AI and data</b><span>Machine-learning experiments, audio classification, data processing</span></div>
-<div class="item"><b>APIs and formats</b><span>REST APIs, JSON, Postman</span></div>
-<div class="item"><b>Databases</b><span>SQL, MySQL</span></div>
-<div class="item"><b>Developer tools</b><span>Git, GitHub, Docker</span></div>
-<div class="item"><b>Practices</b><span>Object-oriented programming, clean code, SOLID concepts, unit testing</span></div>
-<div class="item"><b>Teamwork</b><span>Scrum, Kanban, documentation, collaboration</span></div>
-<p class="mute" style="font-size:15px;margin-top:14px">I keep deepening these through hands-on projects and feedback. My depth varies across technologies.</p>
-</div></div></section>
+          <p class="hero-description">
+            I'm an Informatics student at the <strong>Federal Institute of Bahia (IFBA)</strong>,
+            exploring software engineering, artificial intelligence and product development.
+            I combine technical curiosity with leadership to build solutions that make a difference.
+          </p>
 
-<section id="approach"><div class="row"><h2>How I work</h2><div class="steps">
-<div class="item"><b>Understand</b><span>Clarify the need before choosing an implementation. Good engineering starts with the problem, not just the code.</span></div>
-<div class="item"><b>Investigate</b><span>Break down unfamiliar problems, test assumptions, debug systematically and learn from evidence.</span></div>
-<div class="item"><b>Build</b><span>Connect technical decisions to usability, practical outcomes and the people who will use the solution.</span></div>
-<div class="item"><b>Collaborate</b><span>Share context, document decisions, communicate clearly and use feedback to move work forward.</span></div>
-<div class="item"><b>Improve</b><span>Treat iteration as part of the process and make each solution more reliable and useful.</span></div>
-</div></div></section>
-</main>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#projects">
+              Explore my projects <span aria-hidden="true">↗</span>
+            </a>
 
-<div class="contact" id="contact"><div class="wrap">
-<h2>Have an interesting problem to solve?</h2>
-<p class="lead" style="margin-top:0">I’m looking for opportunities to learn from strong engineering teams, contribute to useful products and grow at the intersection of software, AI and problem-solving.</p>
-<div class="cta">
-<a class="btn p" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=jhenicefranca%40gmail.com&amp;su=Professional%20Opportunity%20%7C%20Tabata%20Franca&amp;body=Hello%20Tabata%2C%0A%0AI%20came%20across%20your%20portfolio%20and%20would%20like%20to%20connect.%0A%0ABest%20regards%2C" target="_blank" rel="noopener">Write in Gmail</a>
-<a class="btn" href="mailto:jhenicefranca@gmail.com?subject=Professional%20Opportunity%20%7C%20Tabata%20Franca">Open my email app</a>
-<button class="btn" type="button" id="copy">Copy address</button>
-<a class="btn" href="https://www.linkedin.com/in/tabatajhenice/" target="_blank" rel="noopener">LinkedIn</a></div>
-<p class="mute" style="margin-top:18px;font-size:15px">My email: <strong class="addr">jhenicefranca@gmail.com</strong></p>
-</div></div>
-<footer><div class="wrap">Tábata França · Curiosity to investigate. Discipline to build. Purpose to improve.</div></footer>
+            <a class="btn" href="https://www.linkedin.com/in/tabatajhenice/" target="_blank" rel="noopener noreferrer">
+              LinkedIn ↗
+            </a>
 
-<dialog id="lb"><img alt=""></dialog>
+            <a class="btn" href="#contact">Get in touch</a>
+          </div>
 
-<script>
-(function(){
-var c=document.getElementById('wave'),x=c.getContext('2d'),w,h,t=0,
-rm=matchMedia('(prefers-reduced-motion: reduce)').matches;
-function size(){var r=devicePixelRatio||1;w=c.clientWidth;h=c.clientHeight;c.width=w*r;c.height=h*r;x.setTransform(r,0,0,r,0,0)}
-function draw(){
-x.clearRect(0,0,w,h);
-var L=[[.9,.012,1.0,'rgba(34,211,238,.95)',2],[.55,.021,1.7,'rgba(34,211,238,.45)',1.5],[.3,.034,2.4,'rgba(10,102,194,.8)',1.5]];
-L.forEach(function(l){x.beginPath();x.strokeStyle=l[3];x.lineWidth=l[4];
-for(var i=0;i<=w;i+=3){var e=Math.sin(i/w*Math.PI),
-y=h/2+Math.sin(i*l[1]+t*l[2])*Math.sin(i*.004+t*.6)*h*.38*l[0]*(.35+.65*e);
-i?x.lineTo(i,y):x.moveTo(i,y)}x.stroke()});
-if(!rm){t+=.03;requestAnimationFrame(draw)}}
-size();draw();addEventListener('resize',function(){size();if(rm)draw()});
-var d=document.getElementById('lb'),im=d.querySelector('img');
-document.querySelectorAll('.gal button').forEach(function(b){b.addEventListener('click',function(){
-var s=b.querySelector('img');im.src=s.src;im.alt=s.alt;d.showModal()})});
-d.addEventListener('click',function(){d.close()});
-var cb=document.getElementById('copy'),a='jhenicefranca@gmail.com';
-function done(){cb.textContent='Address copied';setTimeout(function(){cb.textContent='Copy address'},2200)}
-function fb(){var t=document.createElement('textarea');t.value=a;document.body.appendChild(t);t.select();
-try{document.execCommand('copy');done()}catch(e){}document.body.removeChild(t)}
-cb.addEventListener('click',function(){
-if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(a).then(done,fb)}else{fb()}});
-})();
-</script>
+          <div class="hero-note">
+            <span class="status-dot"></span>
+            <span>Building · Learning · Iterating</span>
+          </div>
+        </div>
+
+        <aside class="code-card reveal" aria-label="Decorative code illustration">
+          <div class="code-top">
+            <span class="window-dots" aria-hidden="true">
+              <span></span><span></span><span></span>
+            </span>
+            <span>tabata.py</span>
+            <span>Python</span>
+          </div>
+
+          <div class="code-content">
+            <span class="code-line"><span class="code-number">01</span><span class="code-purple">class</span> <span class="code-blue">Engineer</span>:</span>
+            <span class="code-line"><span class="code-number">02</span>  curiosity = <span class="code-green">"always_on"</span></span>
+            <span class="code-line"><span class="code-number">03</span>  mindset = <span class="code-green">"problem_solver"</span></span>
+            <span class="code-line"><span class="code-number">04</span>  focus = [</span>
+            <span class="code-line"><span class="code-number">05</span>    <span class="code-orange">"software"</span>,</span>
+            <span class="code-line"><span class="code-number">06</span>    <span class="code-orange">"artificial_intelligence"</span>,</span>
+            <span class="code-line"><span class="code-number">07</span>    <span class="code-orange">"accessibility"</span></span>
+            <span class="code-line"><span class="code-number">08</span>  ]</span>
+            <span class="code-line"><span class="code-number">09</span></span>
+            <span class="code-line"><span class="code-number">10</span>  <span class="code-purple">def</span> <span class="code-cyan">build</span>(self, idea):</span>
+            <span class="code-line"><span class="code-number">11</span>    <span class="code-purple">return</span> idea + <span class="code-green">"impact"</span></span>
+
+            <div class="code-divider"></div>
+
+            <div class="code-status">
+              <span class="status-dot"></span>
+              <span>READY TO BUILD SOMETHING MEANINGFUL</span>
+            </div>
+          </div>
+        </aside>
+
+      </div>
+
+      <div class="wave-wrap">
+        <span class="wave-label">SIGNAL / PROCESSING / IMPACT</span>
+        <canvas id="wave" role="img" aria-label="Animated sound wave inspired by the ARM-ALPHA assistive technology project"></canvas>
+      </div>
+
+      <div class="stats">
+        <div class="stat">
+          <span class="stat-value">~<span>95%</span></span>
+          <span class="stat-label">Accuracy reported in ARM-ALPHA model experiments</span>
+        </div>
+
+        <div class="stat">
+          <span class="stat-value"><span>300+</span></span>
+          <span class="stat-label">People reached through MPROVA educational materials</span>
+        </div>
+
+        <div class="stat">
+          <span class="stat-value"><span>30+</span></span>
+          <span class="stat-label">Medalists associated with the MPROVA initiative</span>
+        </div>
+
+        <div class="stat">
+          <span class="stat-value"><span>87%+</span></span>
+          <span class="stat-label">Votes received in the IFBA student representative election</span>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <!-- ABOUT -->
+
+    <section class="section" id="about">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">01 / Background</span>
+          <h2 class="section-title">Beyond the code.</h2>
+        </div>
+
+        <p class="section-intro">
+          I believe good technology starts with understanding people.
+          My interests sit at the intersection of engineering, problem-solving,
+          accessibility and educational opportunity.
+        </p>
+      </div>
+
+      <div class="about-grid">
+
+        <article class="glass-card about-main reveal">
+          <span class="mono accent">A little about me</span>
+
+          <h3>Technical curiosity.<br><span class="accent">Purpose-driven execution.</span></h3>
+
+          <p>
+            My journey in technology began at IFBA, where I learned to turn questions
+            into experiments, experiments into working prototypes, and ideas into
+            solutions that can serve real communities.
+          </p>
+
+          <p>
+            From machine-learning experiments for assistive technology to digital
+            resources for public-school students, I enjoy working across the process:
+            understanding a need, exploring a technical approach, building, testing
+            and improving.
+          </p>
+
+          <p>
+            Leadership is part of that process, too. Through student representation,
+            educational initiatives and collaborative engineering, I've learned to
+            communicate clearly, take ownership and bring people together around a goal.
+          </p>
+        </article>
+
+        <div class="about-side">
+
+          <article class="glass-card mini-card reveal">
+            <div class="mini-icon">&lt;/&gt;</div>
+            <h4>Software & Engineering</h4>
+            <p>Building applications, exploring codebases, debugging and learning through hands-on implementation.</p>
+          </article>
+
+          <article class="glass-card mini-card reveal">
+            <div class="mini-icon">AI</div>
+            <h4>Artificial Intelligence</h4>
+            <p>Experimenting with audio classification, model evaluation and machine-learning workflows.</p>
+          </article>
+
+          <article class="glass-card mini-card reveal">
+            <div class="mini-icon">↗</div>
+            <h4>Leadership & Impact</h4>
+            <p>Connecting people, technology and educational opportunities through collaborative projects.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+
+    <section class="section" id="experience">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">02 / Experience</span>
+          <h2 class="section-title">Learning by building.</h2>
+        </div>
+
+        <p class="section-intro">
+          Working with real projects means learning how to navigate unfamiliar code,
+          understand requirements, incorporate feedback and collaborate toward delivery.
+        </p>
+      </div>
+
+      <article class="glass-card experience-card reveal">
+
+        <div>
+          <div class="experience-company">
+            <div class="company-mark">B.</div>
+            <div>
+              <h3>BRASA</h3>
+              <p>Technology Team · Internal product</p>
+            </div>
+          </div>
+
+          <span class="eyebrow">Software engineering</span>
+
+          <p>
+            Collaborating on an internal report-generation product, exploring code
+            organization and investigating backend behavior as part of a shared
+            engineering workflow.
+          </p>
+
+          <div class="confidential">
+            NOTE: This is an internal project. Confidential source code and implementation details are not published here.
+          </div>
+        </div>
+
+        <div>
+          <h4>What I work on</h4>
+
+          <ul class="bullet-list">
+            <li>Implementing tasks in a collaborative codebase.</li>
+            <li>Investigating backend behavior and tracing code execution.</li>
+            <li>Understanding requirements and translating them into technical work.</li>
+            <li>Using feedback and delivery priorities to improve implementation.</li>
+            <li>Communicating findings and sharing context with teammates.</li>
+          </ul>
+        </div>
+
+      </article>
+    </section>
+
+    <!-- PROJECTS -->
+
+    <section class="section" id="projects">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">03 / Selected work</span>
+          <h2 class="section-title">Projects with purpose.</h2>
+        </div>
+
+        <p class="section-intro">
+          A selection of projects where software, machine learning, hardware and
+          educational technology meet real needs. Each one represents a different
+          part of how I approach building solutions.
+        </p>
+      </div>
+
+      <div class="project-list">
+
+        <!-- ARM-ALPHA -->
+
+        <article class="project reveal">
+          <div class="project-head">
+            <div>
+              <span class="project-number">PROJECT 01 / AI + ACCESSIBILITY</span>
+              <h3>ARM-ALPHA</h3>
+              <p class="project-subtitle">Environmental sound recognition for assistive technology</p>
+            </div>
+            <div class="project-mark">AI</div>
+          </div>
+
+          <div class="pills">
+            <span>Python</span>
+            <span>Machine Learning</span>
+            <span>UrbanSound8K</span>
+            <span>Raspberry Pi</span>
+            <span>Embedded Systems</span>
+          </div>
+
+          <p class="project-description">
+            ARM-ALPHA explores how environmental sound recognition can help people
+            with hearing impairments become more aware of their surroundings.
+            The concept connects machine-learning experiments to a wearable
+            assistive device that translates detected sounds into vibration patterns.
+          </p>
+
+          <div class="project-content">
+            <div>
+              <span class="mono accent">System architecture</span>
+
+              <div class="flow">
+                <div class="flow-step">
+                  <b>01 / Audio input</b>
+                  <span>A microphone captures environmental sounds.</span>
+                </div>
+                <div class="flow-step">
+                  <b>02 / Processing</b>
+                  <span>A Raspberry Pi supports the hardware concept.</span>
+                </div>
+                <div class="flow-step">
+                  <b>03 / Classification</b>
+                  <span>A model is trained and evaluated with UrbanSound8K.</span>
+                </div>
+                <div class="flow-step">
+                  <b>04 / Feedback</b>
+                  <span>Vibration motors communicate detected sound categories.</span>
+                </div>
+              </div>
+
+              <ul class="bullet-list">
+                <li>Developed and refined an environmental audio-classification workflow.</li>
+                <li>Worked with Python and machine-learning experiments using UrbanSound8K.</li>
+                <li>Connected software experiments to a hardware concept involving a microphone, Raspberry Pi and eight vibration motors.</li>
+                <li>Contributed to model refinement, with approximately 95% accuracy reported in project experiments.</li>
+              </ul>
+
+              <blockquote class="project-quote">
+                The challenge is not just recognizing a sound. It's translating a model's
+                output into feedback that can be useful in someone's everyday life.
+              </blockquote>
+
+              <div class="project-links">
+                <a class="btn btn-primary" href="https://github.com/murilomatutino/urban-yamnet" target="_blank" rel="noopener noreferrer">
+                  View source code ↗
+                </a>
+              </div>
+            </div>
+
+            <figure class="project-visual">
+              <img
+                src="./Captura%20de%20tela%202026-10-22%20190010.png"
+                alt="ARM-ALPHA assistive technology project"
+                loading="lazy"
+              >
+              <figcaption class="visual-caption">ARM-ALPHA / MACHINE LEARNING + ASSISTIVE HARDWARE</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <!-- ROBOTICS -->
+
+        <article class="project reveal">
+          <div class="project-head">
+            <div>
+              <span class="project-number">PROJECT 02 / ROBOTICS + EDUCATION</span>
+              <h3>Educational Robotics Monitor</h3>
+              <p class="project-subtitle">STEAM LEGO CLASS · IFBA extension project</p>
+            </div>
+            <div class="project-mark">RBT</div>
+          </div>
+
+          <div class="pills">
+            <span>Python</span>
+            <span>Block Programming</span>
+            <span>Arduino</span>
+            <span>Sensors</span>
+            <span>LEGO Robotics</span>
+          </div>
+
+          <p class="project-description">
+            As an educational robotics monitor, I supported practical learning
+            activities in programming, robotics and technology. The experience
+            strengthened my ability to explain technical concepts, guide experiments
+            and connect computational thinking with hands-on activities.
+          </p>
+
+          <div class="project-content">
+            <div>
+              <span class="mono accent">My contributions</span>
+
+              <ul class="bullet-list">
+                <li>Guided students through Python and block-based programming activities.</li>
+                <li>Supported robot assembly and sensor integration.</li>
+                <li>Introduced basic Arduino concepts and practical applications.</li>
+                <li>Prepared educational materials and presentations for classes.</li>
+              </ul>
+
+              <p class="muted" style="font-size:11px; margin-top:18px">
+                Extension project: Curso de Robótica LEGO – STEAM LEGO CLASS.
+                Workload: 20 hours per week.
+              </p>
+            </div>
+
+            <figure class="project-visual">
+              <img
+                src="./Captura%20de%20tela%202026-10-22%20190703.png"
+                alt="Supporting document for the STEAM LEGO CLASS robotics monitor role"
+                loading="lazy"
+              >
+              <figcaption class="visual-caption">STEAM LEGO CLASS / SUPPORTING DOCUMENT</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <!-- INVENTORY -->
+
+        <article class="project reveal">
+          <div class="project-head">
+            <div>
+              <span class="project-number">PROJECT 03 / SOFTWARE DEVELOPMENT</span>
+              <h3>Inventory Management System</h3>
+              <p class="project-subtitle">A Python application for inventory workflows</p>
+            </div>
+            <div class="project-mark">SYS</div>
+          </div>
+
+          <div class="pills">
+            <span>Python</span>
+            <span>Programming Logic</span>
+            <span>Data Organization</span>
+          </div>
+
+          <p class="project-description">
+            A software project focused on organizing inventory information and
+            supporting routine stock-management tasks. It gave me an opportunity
+            to apply programming logic to a practical operational use case.
+          </p>
+
+          <div class="project-content">
+            <div>
+              <span class="mono accent">What I explored</span>
+
+              <ul class="bullet-list">
+                <li>Structuring functionality around inventory information.</li>
+                <li>Applying programming logic to everyday management workflows.</li>
+                <li>Organizing data and supporting routine operations through software.</li>
+              </ul>
+
+              <div class="project-links">
+                <a class="btn btn-primary" href="https://github.com/Bree-TIstudent/estoque_python" target="_blank" rel="noopener noreferrer">
+                  Explore repository ↗
+                </a>
+              </div>
+            </div>
+
+            <figure class="project-visual">
+              <img
+                src="./Captura%20de%20tela%202026-10-22%20123344.png"
+                alt="Inventory management application screenshot"
+                loading="lazy"
+              >
+              <figcaption class="visual-caption">INVENTORY MANAGEMENT / APPLICATION PREVIEW</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <!-- MPROVA -->
+
+        <article class="project reveal">
+          <div class="project-head">
+            <div>
+              <span class="project-number">PROJECT 04 / EDUCATIONAL TECHNOLOGY + LEADERSHIP</span>
+              <h3>MPROVA</h3>
+              <p class="project-subtitle">Founder, President & Technology Lead</p>
+            </div>
+            <div class="project-mark">M.</div>
+          </div>
+
+          <div class="pills">
+            <span>JavaScript</span>
+            <span>TypeScript</span>
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>Educational Technology</span>
+          </div>
+
+          <p class="project-description">
+            MPROVA is an academic-support and motivation initiative connecting
+            students from public schools with educational resources, academic
+            olympiad preparation and opportunities to develop their potential.
+            As its founder and technology lead, I help connect educational needs
+            with digital resources, project coordination and collaboration with
+            school communities.
+          </p>
+
+          <div class="acro" aria-label="MPROVA stands for Motivação, Participação, Resolução, Oportunidade, Voluntariado e Apoio">
+            <div><b>M</b>Motivação</div>
+            <div><b>P</b>Participação</div>
+            <div><b>R</b>Resolução</div>
+            <div><b>O</b>Oportunidade</div>
+            <div><b>V</b>Voluntariado</div>
+            <div><b>A</b>Apoio</div>
+          </div>
+
+          <div class="project-metrics">
+            <div class="project-metric">
+              <strong>5</strong>
+              <span>Partner public schools</span>
+            </div>
+            <div class="project-metric">
+              <strong>300+</strong>
+              <span>People reached through educational materials</span>
+            </div>
+            <div class="project-metric">
+              <strong>30+</strong>
+              <span>Medalists associated with the initiative</span>
+            </div>
+          </div>
+
+          <div class="project-content">
+            <div>
+              <span class="mono accent">Technology meets education</span>
+
+              <ul class="bullet-list">
+                <li>Website development and digital educational resources.</li>
+                <li>Project leadership, planning and coordination.</li>
+                <li>Educational content and academic support activities.</li>
+                <li>Collaboration with public-school communities.</li>
+              </ul>
+
+              <blockquote class="project-quote">
+                Technology becomes more meaningful when it is accessible,
+                understandable and connected to the needs of the people using it.
+              </blockquote>
+
+              <div class="project-links">
+                <a class="btn btn-primary" href="https://github.com/murilomatutino/mprova" target="_blank" rel="noopener noreferrer">
+                  View source code ↗
+                </a>
+              </div>
+            </div>
+
+            <div>
+              <span class="mono accent">Website gallery · Click to enlarge</span>
+
+              <div class="gallery">
+                <button type="button" aria-label="Enlarge MPROVA website screenshot 1">
+                  <img src="./WhatsApp%20Image%202026-10-22%20at%2012.52.11.jpeg" alt="MPROVA website screenshot 1" loading="lazy">
+                </button>
+
+                <button type="button" aria-label="Enlarge MPROVA website screenshot 2">
+                  <img src="./WhatsApp%20Image%202026-10-22%20at%2012.52.12.jpeg" alt="MPROVA website screenshot 2" loading="lazy">
+                </button>
+
+                <button type="button" aria-label="Enlarge MPROVA website screenshot 3">
+                  <img src="./WhatsApp%20Image%202026-10-22%20at%2012.52.12%20%281%29.jpeg" alt="MPROVA website screenshot 3" loading="lazy">
+                </button>
+
+                <button type="button" aria-label="Enlarge MPROVA website screenshot 4">
+                  <img src="./WhatsApp%20Image%202026-10-22%20at%2012.52.12%20%282%29.jpeg" alt="MPROVA website screenshot 4" loading="lazy">
+                </button>
+
+                <button type="button" aria-label="Enlarge MPROVA website screenshot 5">
+                  <img src="./WhatsApp%20Image%202026-10-22%20at%2012.52.12%20%283%29.jpeg" alt="MPROVA website screenshot 5" loading="lazy">
+                </button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- LEADERSHIP AND RECOGNITION -->
+
+    <section class="section" id="recognition">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">04 / Leadership</span>
+          <h2 class="section-title">Taking initiative.</h2>
+        </div>
+
+        <p class="section-intro">
+          I see leadership as the ability to take responsibility, listen to different
+          perspectives and turn collective goals into meaningful action.
+          These experiences shape how I approach both engineering and teamwork.
+        </p>
+      </div>
+
+      <div class="two-col">
+
+        <article class="glass-card list-card reveal">
+          <h3><span class="accent">↗</span> Leadership & community</h3>
+
+          <div class="list-item">
+            <strong>Founder & Technology Lead · MPROVA</strong>
+            <p>Building an educational initiative that connects digital resources, academic support and public-school communities.</p>
+          </div>
+
+          <div class="list-item">
+            <strong>Student Representative · IFBA</strong>
+            <p>Elected with more than 87% of the votes, representing a student community of approximately 500 people.</p>
+          </div>
+
+          <div class="list-item">
+            <strong>Technology Team · BRASA</strong>
+            <p>Collaborating on an internal product in a shared engineering environment.</p>
+          </div>
+
+          <div class="list-item">
+            <strong>Student Leadership & Representation</strong>
+            <p>Experience in student organizations, institutional representation and collective decision-making.</p>
+          </div>
+        </article>
+
+        <article class="glass-card list-card reveal">
+          <h3><span class="accent">✳</span> Awards & recognition</h3>
+
+          <div class="list-item">
+            <strong>AFS Global STEM Academies</strong>
+            <p>Finalist among more than 7,000 applicants.</p>
+          </div>
+
+          <div class="list-item">
+            <strong>National Science Olympiad (ONC)</strong>
+            <p>Gold medal · Top 5%.</p>
+          </div>
+
+          <div class="list-item">
+            <strong>Brazilian Mathematics Olympiad (OBMEP)</strong>
+            <p>Bronze medal and two honorable mentions.</p>
+          </div>
+
+          <div class="list-item">
+            <strong>Brazilian Geography Olympiad (OBG)</strong>
+            <p>Silver medal.</p>
+          </div>
+
+          <div class="list-item">
+            <strong>Additional academic olympiads</strong>
+            <p>Recognition in other science, mathematics and knowledge competitions.</p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+
+    <section class="section" id="skills">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">05 / Technical toolkit</span>
+          <h2 class="section-title">Tools I work with.</h2>
+        </div>
+
+        <p class="section-intro">
+          My technical foundation comes from coursework, practical projects and
+          collaborative development. I'm continuously expanding my skills through
+          experimentation, documentation and feedback.
+        </p>
+      </div>
+
+      <div class="skills-grid">
+
+        <article class="skill-card reveal">
+          <h3><span>01</span> Programming languages</h3>
+          <p>Python · JavaScript · TypeScript · Java · C#</p>
+        </article>
+
+        <article class="skill-card reveal">
+          <h3><span>02</span> Web development</h3>
+          <p>HTML · CSS · Responsive interfaces · Frontend fundamentals</p>
+        </article>
+
+        <article class="skill-card reveal">
+          <h3><span>03</span> Artificial intelligence & data</h3>
+          <p>Machine-learning experiments · Audio classification · Data processing · Model evaluation</p>
+        </article>
+
+        <article class="skill-card reveal">
+          <h3><span>04</span> APIs & integration</h3>
+          <p>REST APIs · JSON · Postman · API testing fundamentals</p>
+        </article>
+
+        <article class="skill-card reveal">
+          <h3><span>05</span> Databases</h3>
+          <p>SQL · MySQL · Data modeling fundamentals</p>
+        </article>
+
+        <article class="skill-card reveal">
+          <h3><span>06</span> Development tools</h3>
+          <p>Git · GitHub · Docker · Google Colab</p>
+        </article>
+
+        <article class="skill-card reveal">
+          <h3><span>07</span> Engineering practices</h3>
+          <p>Object-oriented programming · Clean code · SOLID concepts · Unit-testing fundamentals</p>
+        </article>
+
+        <article class="skill-card reveal">
+          <h3><span>08</span> Collaboration</h3>
+          <p>Scrum · Kanban · Technical documentation · Communication · Feedback</p>
+        </article>
+
+      </div>
+
+      <p class="skill-note">
+        I continue developing these skills through hands-on work. My experience and depth vary across technologies.
+      </p>
+    </section>
+
+    <!-- APPROACH -->
+
+    <section class="section" id="approach">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">06 / Working principles</span>
+          <h2 class="section-title">How I approach problems.</h2>
+        </div>
+
+        <p class="section-intro">
+          I try to combine technical discipline with curiosity and an understanding
+          of the people who will use the solution. My process is iterative:
+          learn, test, communicate and improve.
+        </p>
+      </div>
+
+      <div class="workflow">
+
+        <article class="workflow-card reveal">
+          <h3>Understand</h3>
+          <p>Clarify the problem, identify the need and establish what a useful result looks like.</p>
+        </article>
+
+        <article class="workflow-card reveal">
+          <h3>Investigate</h3>
+          <p>Explore unfamiliar systems, ask questions, debug systematically and test assumptions.</p>
+        </article>
+
+        <article class="workflow-card reveal">
+          <h3>Build</h3>
+          <p>Turn ideas into implementations and connect technical choices to usability.</p>
+        </article>
+
+        <article class="workflow-card reveal">
+          <h3>Collaborate</h3>
+          <p>Share context, document decisions, communicate progress and incorporate feedback.</p>
+        </article>
+
+        <article class="workflow-card reveal">
+          <h3>Improve</h3>
+          <p>Learn from results, refine the implementation and make the solution more useful.</p>
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- CONTACT -->
+
+  <section class="contact-section" id="contact">
+    <div class="wrap">
+
+      <div class="contact-panel reveal">
+        <span class="eyebrow">07 / Contact</span>
+
+        <h2>Let's build something that matters.</h2>
+
+        <p>
+          I'm interested in opportunities to learn from strong engineering teams,
+          contribute to useful products and grow at the intersection of software,
+          AI and problem-solving.
+        </p>
+
+        <div class="contact-actions">
+          <a
+            class="btn btn-primary"
+            href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=jhenicefranca%40gmail.com&amp;su=Professional%20Opportunity%20%7C%20Tabata%20Franca"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Write me an email ↗
+          </a>
+
+          <a
+            class="btn"
+            href="mailto:jhenicefranca@gmail.com?subject=Professional%20Opportunity%20%7C%20Tabata%20Franca"
+          >
+            Open email app
+          </a>
+
+          <a
+            class="btn"
+            href="https://www.linkedin.com/in/tabatajhenice/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn ↗
+          </a>
+
+          <button class="btn" type="button" id="copy-email">
+            Copy email address
+          </button>
+        </div>
+
+        <div class="email-line">
+          <span>Email:</span>
+          <a href="mailto:jhenicefranca@gmail.com" id="email-address">jhenicefranca@gmail.com</a>
+          <span id="copy-status" aria-live="polite"></span>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <p>© <span id="year"></span> Tabata França · Built with curiosity and purpose.</p>
+      <a class="back-top" href="#top">BACK TO TOP ↑</a>
+    </div>
+  </footer>
+
+  <dialog id="lightbox" aria-label="Expanded project screenshot">
+    <img src="" alt="">
+    <button type="button" class="dialog-close" id="close-lightbox">Close image ✕</button>
+  </dialog>
+
+  <script>
+    (() => {
+      "use strict";
+
+      // Footer year
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      // Animated sound wave
+      const canvas = document.getElementById("wave");
+
+      if (canvas) {
+        const ctx = canvas.getContext("2d");
+        const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        let width = 0;
+        let height = 0;
+        let time = 0;
+        let frame = null;
+
+        const waves = [
+          { amplitude: .38, frequency: .012, speed: 1, color: "rgba(96,165,250,.85)", line: 1.6 },
+          { amplitude: .25, frequency: .019, speed: 1.5, color: "rgba(103,232,249,.65)", line: 1.3 },
+          { amplitude: .17, frequency: .027, speed: .7, color: "rgba(37,99,235,.8)", line: 1.5 }
+        ];
+
+        function resizeCanvas() {
+          const dpr = Math.min(window.devicePixelRatio || 1, 2);
+          width = canvas.clientWidth;
+          height = canvas.clientHeight;
+
+          canvas.width = Math.round(width * dpr);
+          canvas.height = Math.round(height * dpr);
+
+          ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+          drawWave();
+        }
+
+        function drawWave() {
+          if (!ctx || !width || !height) return;
+
+          ctx.clearRect(0, 0, width, height);
+
+          waves.forEach((wave, index) => {
+            ctx.beginPath();
+            ctx.strokeStyle = wave.color;
+            ctx.lineWidth = wave.line;
+
+            for (let x = 0; x <= width; x += 3) {
+              const edge = Math.sin((x / width) * Math.PI);
+              const envelope = .3 + .7 * edge;
+
+              const y =
+                height / 2 +
+                Math.sin(x * wave.frequency + time * wave.speed) *
+                Math.sin(x * .004 + time * .45 + index) *
+                height * wave.amplitude * envelope;
+
+              if (x === 0) ctx.moveTo(x, y);
+              else ctx.lineTo(x, y);
+            }
+
+            ctx.stroke();
+          });
+
+          if (!reducedMotion) {
+            time += .025;
+            frame = requestAnimationFrame(drawWave);
+          }
+        }
+
+        resizeCanvas();
+
+        window.addEventListener("resize", () => {
+          if (frame) cancelAnimationFrame(frame);
+          resizeCanvas();
+
+          if (!reducedMotion) {
+            time += .01;
+            frame = requestAnimationFrame(drawWave);
+          }
+        }, { passive: true });
+      }
+
+      // Project image lightbox
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImage = lightbox.querySelector("img");
+      const closeLightbox = document.getElementById("close-lightbox");
+
+      document.querySelectorAll(".gallery button").forEach(button => {
+        button.addEventListener("click", () => {
+          const image = button.querySelector("img");
+
+          lightboxImage.src = image.src;
+          lightboxImage.alt = image.alt;
+
+          if (typeof lightbox.showModal === "function") {
+            lightbox.showModal();
+          }
+        });
+      });
+
+      closeLightbox.addEventListener("click", () => lightbox.close());
+
+      lightbox.addEventListener("click", event => {
+        if (event.target === lightbox) lightbox.close();
+      });
+
+      // Email copy button
+      const copyButton = document.getElementById("copy-email");
+      const copyStatus = document.getElementById("copy-status");
+      const email = "jhenicefranca@gmail.com";
+
+      copyButton.addEventListener("click", async () => {
+        try {
+          if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(email);
+          } else {
+            const temporaryInput = document.createElement("textarea");
+            temporaryInput.value = email;
+            temporaryInput.style.position = "fixed";
+            temporaryInput.style.opacity = "0";
+
+            document.body.appendChild(temporaryInput);
+            temporaryInput.select();
+
+            const success = document.execCommand("copy");
+            temporaryInput.remove();
+
+            if (!success) throw new Error("Clipboard unavailable");
+          }
+
+          copyButton.textContent = "Email copied ✓";
+          copyStatus.textContent = "Copied successfully.";
+
+          window.setTimeout(() => {
+            copyButton.textContent = "Copy email address";
+            copyStatus.textContent = "";
+          }, 2200);
+        } catch (error) {
+          copyStatus.textContent = "Copy unavailable — select the email address above.";
+        }
+      });
+
+      // Subtle reveal animations, with an accessible fallback
+      const revealElements = document.querySelectorAll(".reveal");
+
+      if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: .08 });
+
+        revealElements.forEach(element => observer.observe(element));
+      } else {
+        revealElements.forEach(element => element.classList.add("visible"));
+      }
+
+      // Highlight the current navigation section
+      const navLinks = document.querySelectorAll(".nav-links a[href^='#']");
+
+      if ("IntersectionObserver" in window) {
+        const sectionObserver = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              navLinks.forEach(link => {
+                const isCurrent = link.getAttribute("href") === "#" + entry.target.id;
+
+                if (isCurrent) link.classList.add("active");
+                else link.classList.remove("active");
+              });
+            }
+          });
+        }, {
+          rootMargin: "-25% 0px -65% 0px"
+        });
+
+        document.querySelectorAll("main section[id], .contact-section[id]").forEach(section => {
+          sectionObserver.observe(section);
+        });
+      }
+    })();
+  </script>
+
 </body>
 </html>
