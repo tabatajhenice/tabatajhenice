@@ -5,6 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Tábata França — Software engineering, AI and product thinking</title>
 <meta name="description" content="Informatics student at IFBA building software, machine-learning projects and educational technology.">
+<meta name="theme-color" content="#0a1020">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Tábata França — Software engineering, AI and product thinking">
+<meta property="og:description" content="Informatics student at IFBA. Software, machine learning and educational technology, with projects in accessibility and public schools.">
+<meta property="og:url" content="https://tabatajhenice.github.io/tabatajhenice/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a1020'/%3E%3Cpath d='M8 34h8l6-18 10 34 8-26 5 10h11' fill='none' stroke='%2322d3ee' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
@@ -24,6 +30,7 @@ nav ul{display:flex;gap:26px;list-style:none;padding:0}
 nav ul a{text-decoration:none;color:var(--mute);font-size:15px}
 nav ul a:hover{color:var(--text)}
 .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:8px;font:500 15px var(--b);text-decoration:none;border:1px solid var(--line);color:var(--text);transition:background .2s,border-color .2s}
+button.btn{cursor:pointer;background:transparent}
 .btn:hover{border-color:var(--acc);background:rgba(34,211,238,.08)}
 .btn.p{background:var(--acc);border-color:var(--acc);color:#04202a}
 .btn.p:hover{background:#67e8f9}
@@ -80,6 +87,7 @@ dialog img{max-width:92vw;max-height:88vh;border-radius:10px;display:block}
 .steps b:before{counter-increment:s;content:counter(s) ". ";color:var(--acc)}
 .contact{padding:84px 0}
 .contact h2{font:700 clamp(30px,5vw,48px)/1.1 var(--d);max-width:14em;margin-bottom:16px}
+.addr{user-select:all}
 footer{border-top:1px solid var(--line);padding:26px 0;color:var(--mute);font-size:14.5px}
 @media(max-width:760px){.row,.two{grid-template-columns:1fr;gap:20px}.row>h2{position:static}
 nav ul{gap:16px}nav ul li:nth-child(n+3){display:none}.skills .item,.steps .item{grid-template-columns:1fr;gap:2px}
@@ -97,7 +105,7 @@ nav ul{gap:16px}nav ul li:nth-child(n+3){display:none}.skills .item,.steps .item
 <div class="cta">
 <a class="btn p" href="#projects">See my projects</a>
 <a class="btn" href="https://www.linkedin.com/in/tabatajhenice/" target="_blank" rel="noopener">LinkedIn</a>
-<a class="btn" href="mailto:jhenicefranca@gmail.com?subject=Professional%20Opportunity%20%7C%20Tabata%20Franca&body=Hello%20Tabata%2C%0A%0AI%20came%20across%20your%20GitHub%20portfolio%20and%20would%20like%20to%20connect.%0A%0ABest%20regards%2C">Send an email</a>
+<a class="btn" href="#contact">Email me</a>
 </div>
 <canvas id="wave" aria-label="Animated sound wave, inspired by the ARM-ALPHA project" role="img"></canvas>
 <div class="facts">
@@ -111,6 +119,13 @@ nav ul{gap:16px}nav ul li:nth-child(n+3){display:none}.skills .item,.steps .item
 <section id="about"><div class="row"><h2>About</h2><div>
 <p>I focus on software engineering, artificial intelligence and technology that solves meaningful problems. My work sits where <b>building software, understanding users and taking ownership</b> overlap.</p>
 <p class="mute">Through technical projects, educational initiatives and teamwork, I turn needs into practical solutions, learn quickly from experiments and explain technical ideas clearly. I do my best work where engineering, product thinking and customer needs meet.</p>
+</div></div></section>
+
+<section id="bring"><div class="row"><h2>What I bring to a team</h2><div>
+<div class="item"><b>I explain technical ideas clearly</b><span>At MPROVA I coordinate work with public schools and turn educational needs into digital resources. As IFBA student representative, I speak for about 500 students.</span></div>
+<div class="item"><b>I investigate before I act</b><span>At BRASA I explore code and backend behavior to understand a problem. In ARM-ALPHA I contributed to refining a model that reached about 95% accuracy in experiments.</span></div>
+<div class="item"><b>I take ownership</b><span>I founded MPROVA and lead its technology, from the educational need to the working website.</span></div>
+<div class="item"><b>I work with feedback</b><span>I use Scrum and Kanban, document decisions and share context so the team can move forward.</span></div>
 </div></div></section>
 
 <section id="experience"><div class="row"><h2>Experience</h2><div>
@@ -216,9 +231,11 @@ nav ul{gap:16px}nav ul li:nth-child(n+3){display:none}.skills .item,.steps .item
 <h2>Have an interesting problem to solve?</h2>
 <p class="lead" style="margin-top:0">I’m looking for opportunities to learn from strong engineering teams, contribute to useful products and grow at the intersection of software, AI and problem-solving.</p>
 <div class="cta">
-<a class="btn p" href="mailto:jhenicefranca@gmail.com?subject=Professional%20Opportunity%20%7C%20Tabata%20Franca&body=Hello%20Tabata%2C%0A%0AI%20came%20across%20your%20GitHub%20portfolio%20and%20would%20like%20to%20connect.%0A%0ABest%20regards%2C">Send an email</a>
+<a class="btn p" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=jhenicefranca%40gmail.com&amp;su=Professional%20Opportunity%20%7C%20Tabata%20Franca&amp;body=Hello%20Tabata%2C%0A%0AI%20came%20across%20your%20portfolio%20and%20would%20like%20to%20connect.%0A%0ABest%20regards%2C" target="_blank" rel="noopener">Write in Gmail</a>
+<a class="btn" href="mailto:jhenicefranca@gmail.com?subject=Professional%20Opportunity%20%7C%20Tabata%20Franca">Open my email app</a>
+<button class="btn" type="button" id="copy">Copy address</button>
 <a class="btn" href="https://www.linkedin.com/in/tabatajhenice/" target="_blank" rel="noopener">LinkedIn</a></div>
-<p class="mute" style="margin-top:18px;font-size:15px">Prefer to copy the address? jhenicefranca@gmail.com</p>
+<p class="mute" style="margin-top:18px;font-size:15px">My email: <strong class="addr">jhenicefranca@gmail.com</strong></p>
 </div></div>
 <footer><div class="wrap">Tábata França · Curiosity to investigate. Discipline to build. Purpose to improve.</div></footer>
 
@@ -242,6 +259,12 @@ var d=document.getElementById('lb'),im=d.querySelector('img');
 document.querySelectorAll('.gal button').forEach(function(b){b.addEventListener('click',function(){
 var s=b.querySelector('img');im.src=s.src;im.alt=s.alt;d.showModal()})});
 d.addEventListener('click',function(){d.close()});
+var cb=document.getElementById('copy'),a='jhenicefranca@gmail.com';
+function done(){cb.textContent='Address copied';setTimeout(function(){cb.textContent='Copy address'},2200)}
+function fb(){var t=document.createElement('textarea');t.value=a;document.body.appendChild(t);t.select();
+try{document.execCommand('copy');done()}catch(e){}document.body.removeChild(t)}
+cb.addEventListener('click',function(){
+if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(a).then(done,fb)}else{fb()}});
 })();
 </script>
 </body>
