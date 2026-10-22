@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tábata França — Software engineering, AI and product thinking</title>
+<meta name="description" content="Informatics student at IFBA building software, machine-learning projects and educational technology.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a1020;--panel:#0f1830;--line:#1e2b4a;--text:#e6edf7;--mute:#92a3c0;--acc:#22d3ee;--acc2:#0a66c2;
+--d:'Bricolage Grotesque','Segoe UI',system-ui,sans-serif;--b:'IBM Plex Sans','Segoe UI',system-ui,sans-serif}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{background:var(--bg);color:var(--text);font:400 17px/1.65 var(--b);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--acc);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:5;background:rgba(10,16,32,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+nav b{font:700 18px var(--d)}
+nav ul{display:flex;gap:26px;list-style:none;padding:0}
+nav ul a{text-decoration:none;color:var(--mute);font-size:15px}
+nav ul a:hover{color:var(--text)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:8px;font:500 15px var(--b);text-decoration:none;border:1px solid var(--line);color:var(--text);transition:background .2s,border-color .2s}
+.btn:hover{border-color:var(--acc);background:rgba(34,211,238,.08)}
+.btn.p{background:var(--acc);border-color:var(--acc);color:#04202a}
+.btn.p:hover{background:#67e8f9}
+.hero{padding:76px 0 0}
+h1{font:700 clamp(36px,6.4vw,68px)/1.04 var(--d);letter-spacing:-.025em;max-width:15em}
+.lead{color:var(--mute);max-width:36em;margin:22px 0 30px;font-size:19px}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+#wave{display:block;width:100%;height:150px;margin-top:56px}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.facts div{padding:26px 22px 26px 0}
+.facts strong{display:block;font:700 40px/1 var(--d);color:var(--acc)}
+.facts span{color:var(--mute);font-size:15px}
+section{padding:84px 0 0}
+.row{display:grid;grid-template-columns:230px 1fr;gap:40px}
+.row>h2{font:700 28px/1.2 var(--d);position:sticky;top:84px;align-self:start}
+h3{font:700 24px/1.25 var(--d);margin-bottom:6px}
+p+p{margin-top:14px}
+.mute{color:var(--mute)}
+ul.l{padding:0;list-style:none;margin:14px 0}
+ul.l li{padding:5px 0 5px 22px;position:relative}
+ul.l li:before{content:"";position:absolute;left:0;top:.95em;width:10px;height:2px;background:var(--acc)}
+.pills{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 18px}
+.pills span{padding:3px 12px;border-radius:99px;background:var(--panel);border:1px solid var(--line);font-size:14px;color:var(--mute)}
+.proj{padding:44px 0;border-top:1px solid var(--line)}
+.proj:first-child{border-top:0;padding-top:0}
+blockquote{border-left:3px solid var(--acc);padding:2px 0 2px 18px;margin:18px 0;color:var(--mute);font-style:italic}
+.flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:0;margin:20px 0}
+.flow div{flex:1 1 130px;background:var(--panel);border:1px solid var(--line);padding:14px;font-size:14.5px;position:relative;margin-right:22px;border-radius:8px}
+.flow div:last-child{margin-right:0}
+.flow div:not(:last-child):after{content:"";position:absolute;right:-17px;top:50%;border:6px solid transparent;border-left:9px solid var(--acc);transform:translateY(-50%)}
+.flow b{display:block;font-weight:500;color:var(--text)}
+.frame{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--panel);margin:20px 0 22px}
+.frame i{display:block;height:30px;background:#0b1328;border-bottom:1px solid var(--line);background-image:radial-gradient(circle,#3a4a6e 4px,transparent 5px);background-size:20px 30px;background-repeat:repeat-x;background-position:8px 0;width:100%;background-repeat:no-repeat}
+.frame img{display:block;width:100%}
+.acro{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin:16px 0}
+.acro div{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:12px 4px;text-align:center;font-size:12.5px;color:var(--mute);overflow-wrap:anywhere}
+.acro b{display:block;font:700 30px/1.1 var(--d);color:var(--acc)}
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:18px 0 24px}
+.gal button{padding:0;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--panel);cursor:zoom-in;aspect-ratio:3/4}
+.gal img{width:100%;height:100%;object-fit:cover;object-position:top;display:block;transition:transform .3s}
+.gal button:hover img{transform:scale(1.04)}
+dialog{border:0;background:transparent;max-width:92vw;max-height:92vh;padding:0}
+dialog::backdrop{background:rgba(4,8,18,.9)}
+dialog img{max-width:92vw;max-height:88vh;border-radius:10px;display:block}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.two h3{font-size:20px;margin-bottom:14px}
+.item{padding:14px 0;border-top:1px solid var(--line)}
+.item b{display:block;font-weight:500}
+.item span{color:var(--mute);font-size:15.5px}
+.skills .item{display:grid;grid-template-columns:170px 1fr;gap:16px}
+.steps{counter-reset:s}
+.steps .item{display:grid;grid-template-columns:150px 1fr;gap:16px}
+.steps b{font:700 19px var(--d)}
+.steps b:before{counter-increment:s;content:counter(s) ". ";color:var(--acc)}
+.contact{padding:84px 0}
+.contact h2{font:700 clamp(30px,5vw,48px)/1.1 var(--d);max-width:14em;margin-bottom:16px}
+footer{border-top:1px solid var(--line);padding:26px 0;color:var(--mute);font-size:14.5px}
+@media(max-width:760px){.row,.two{grid-template-columns:1fr;gap:20px}.row>h2{position:static}
+nav ul{gap:16px}nav ul li:nth-child(n+3){display:none}.skills .item,.steps .item{grid-template-columns:1fr;gap:2px}
+.acro{grid-template-columns:repeat(3,1fr)}.gal{grid-template-columns:repeat(2,1fr)}.flow div{margin:0 0 22px}
+.flow div:not(:last-child):after{right:auto;left:50%;top:auto;bottom:-17px;transform:translateX(-50%);border-left:6px solid transparent;border-top:9px solid var(--acc);border-right:6px solid transparent;border-bottom:0}}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><b>Tábata França</b>
+<ul><li><a href="#projects">Projects</a></li><li><a href="#recognition">Recognition</a></li><li><a href="#skills">Skills</a></li><li><a href="#contact">Contact</a></li></ul></div></nav>
+
+<header class="hero"><div class="wrap">
+<h1>Turning real-world problems into technology-driven solutions.</h1>
+<p class="lead">I’m an Informatics student at the Federal Institute of Bahia (IFBA), building software, machine-learning projects and educational technology, and working in the technology team at BRASA.</p>
+<div class="cta">
+<a class="btn p" href="#projects">See my projects</a>
+<a class="btn" href="https://www.linkedin.com/in/tabatajhenice/" target="_blank" rel="noopener">LinkedIn</a>
+<a class="btn" href="mailto:jhenicefranca@gmail.com?subject=Professional%20Opportunity%20%7C%20Tabata%20Franca&body=Hello%20Tabata%2C%0A%0AI%20came%20across%20your%20GitHub%20portfolio%20and%20would%20like%20to%20connect.%0A%0ABest%20regards%2C">Send an email</a>
+</div>
+<canvas id="wave" aria-label="Animated sound wave, inspired by the ARM-ALPHA project" role="img"></canvas>
+<div class="facts">
+<div><strong>~95%</strong><span>accuracy reported in ARM-ALPHA experiments</span></div>
+<div><strong>300+</strong><span>people reached through MPROVA materials</span></div>
+<div><strong>30+</strong><span>medalists associated with MPROVA</span></div>
+<div><strong>87%+</strong><span>of votes in the IFBA student election</span></div>
+</div></div></header>
+
+<main class="wrap">
+<section id="about"><div class="row"><h2>About</h2><div>
+<p>I focus on software engineering, artificial intelligence and technology that solves meaningful problems. My work sits where <b>building software, understanding users and taking ownership</b> overlap.</p>
+<p class="mute">Through technical projects, educational initiatives and teamwork, I turn needs into practical solutions, learn quickly from experiments and explain technical ideas clearly. I do my best work where engineering, product thinking and customer needs meet.</p>
+</div></div></section>
+
+<section id="experience"><div class="row"><h2>Experience</h2><div>
+<h3>Software engineering, BRASA</h3>
+<p class="mute">Technology Team · Internal report-generation product</p>
+<ul class="l">
+<li>Implement features and tasks in a shared codebase, within a collaborative engineering team.</li>
+<li>Explore code organization and investigate backend behavior.</li>
+<li>Work from requirements, feedback and delivery priorities.</li>
+<li>Connect technical investigation to the needs of the product and its users.</li></ul>
+<p class="mute" style="font-size:15px">The project is internal, so confidential source code and implementation details are not included here.</p>
+</div></div></section>
+
+<section id="projects"><div class="row"><h2>Selected projects</h2><div>
+
+<article class="proj">
+<h3>ARM-ALPHA</h3><p class="mute">AI-powered assistive technology</p>
+<div class="pills"><span>Python</span><span>Machine learning</span><span>Audio classification</span><span>Raspberry Pi</span></div>
+<p>ARM-ALPHA explores how environmental sound recognition can give people with hearing impairments more awareness of their surroundings. It pairs machine-learning experiments with an assistive hardware concept that communicates detected sounds through vibration patterns.</p>
+<div class="flow" role="list">
+<div role="listitem"><b>Microphone</b>captures ambient sound</div>
+<div role="listitem"><b>Raspberry Pi</b>runs the model</div>
+<div role="listitem"><b>Classifier</b>trained on UrbanSound8K</div>
+<div role="listitem"><b>Vibration motors</b>signal the detected sound</div></div>
+<ul class="l">
+<li>Built an audio-classification workflow with Python and machine-learning techniques.</li>
+<li>Worked with the UrbanSound8K environmental sound dataset.</li>
+<li>Connected the software experiments to a hardware concept with a Raspberry Pi, microphone and vibration motors.</li>
+<li>Contributed to model development and refinement, with about 95% accuracy reported in project experiments.</li></ul>
+<blockquote>The challenge is not only to classify sound, but to turn model output into useful feedback in an assistive experience.</blockquote>
+<a class="btn" href="https://github.com/murilomatutino/urban-yamnet" target="_blank" rel="noopener">View source code</a>
+</article>
+
+<article class="proj">
+<h3>Inventory Management System</h3><p class="mute">Python application</p>
+<div class="pills"><span>Python</span><span>Programming logic</span><span>Inventory workflows</span></div>
+<p>An application that organizes inventory information and supports stock-management routines.</p>
+<div class="frame"><i></i><img src="./Captura%20de%20tela%202026-10-22%20123344.png" alt="Inventory management system — application screenshot" loading="lazy"></div>
+<ul class="l">
+<li>Applied programming logic to a real operational use case.</li>
+<li>Structured functionality around inventory-related information.</li>
+<li>Explored how an application can support routine management tasks.</li></ul>
+<a class="btn" href="https://github.com/Bree-TIstudent/estoque_python" target="_blank" rel="noopener">View source code</a>
+</article>
+
+<article class="proj">
+<h3>MPROVA</h3><p class="mute">Educational technology · Founder, President and Technology Lead</p>
+<div class="pills"><span>JavaScript</span><span>TypeScript</span><span>HTML</span><span>CSS</span></div>
+<p>MPROVA is an academic-support and motivation initiative. It expands access to educational resources and to preparation for academic olympiads and exams. I connect educational needs with digital resources and help coordinate work with public schools.</p>
+<div class="acro" aria-label="MPROVA stands for Motivação, Participação, Resolução, Oportunidade, Voluntariado e Apoio">
+<div><b>M</b>Motivação</div><div><b>P</b>Participação</div><div><b>R</b>Resolução</div><div><b>O</b>Oportunidade</div><div><b>V</b>Voluntariado</div><div><b>A</b>Apoio</div></div>
+<p class="mute">5 partner public schools · 300+ people reached through materials · 30+ medalists associated with the initiative.</p>
+<ul class="l">
+<li>Website development and digital resources.</li>
+<li>Project leadership and coordination.</li>
+<li>Educational content and academic support.</li>
+<li>Collaboration with public-school communities.</li></ul>
+<blockquote>Technology is more valuable when it is accessible, understandable and connected to the needs of the people using it.</blockquote>
+<div class="gal">
+<button type="button" aria-label="Open MPROVA website screenshot 1"><img src="./WhatsApp%20Image%202026-10-22%20at%2012.52.11.jpeg" alt="MPROVA website screenshot 1" loading="lazy"></button>
+<button type="button" aria-label="Open MPROVA website screenshot 2"><img src="./WhatsApp%20Image%202026-10-22%20at%2012.52.12.jpeg" alt="MPROVA website screenshot 2" loading="lazy"></button>
+<button type="button" aria-label="Open MPROVA website screenshot 3"><img src="./WhatsApp%20Image%202026-10-22%20at%2012.52.12%20%281%29.jpeg" alt="MPROVA website screenshot 3" loading="lazy"></button>
+<button type="button" aria-label="Open MPROVA website screenshot 4"><img src="./WhatsApp%20Image%202026-10-22%20at%2012.52.12%20%282%29.jpeg" alt="MPROVA website screenshot 4" loading="lazy"></button>
+<button type="button" aria-label="Open MPROVA website screenshot 5"><img src="./WhatsApp%20Image%202026-10-22%20at%2012.52.12%20%283%29.jpeg" alt="MPROVA website screenshot 5" loading="lazy"></button></div>
+<a class="btn" href="https://github.com/murilomatutino/mprova" target="_blank" rel="noopener">View source code</a>
+</article>
+</div></div></section>
+
+<section id="recognition"><div class="row"><h2>Leadership and recognition</h2><div class="two">
+<div><h3>Leadership</h3>
+<div class="item"><b>Founder and Technology Lead, MPROVA</b><span>Building an educational initiative that connects digital resources, academic support and public-school communities.</span></div>
+<div class="item"><b>Student Representative, IFBA</b><span>Elected by student vote with more than 87% of votes, representing about 500 students.</span></div>
+<div class="item"><b>Technology Team, BRASA</b><span>Collaborating on an internal report-generation product.</span></div></div>
+<div><h3>Recognition</h3>
+<div class="item"><b>AFS Global STEM Academies</b><span>Finalist among more than 7,000 applicants.</span></div>
+<div class="item"><b>National Science Olympiad (ONC)</b><span>Gold medal, top 5%.</span></div>
+<div class="item"><b>Brazilian Mathematics Olympiad (OBMEP)</b><span>Bronze medal and two honorable mentions.</span></div>
+<div class="item"><b>Brazilian Geography Olympiad (OBG)</b><span>Silver medal.</span></div></div>
+</div></div></section>
+
+<section id="skills"><div class="row"><h2>Skills</h2><div class="skills">
+<div class="item"><b>Programming</b><span>Python, JavaScript, TypeScript, Java, C#</span></div>
+<div class="item"><b>Web</b><span>HTML, CSS</span></div>
+<div class="item"><b>AI and data</b><span>Machine-learning experiments, audio classification, data processing</span></div>
+<div class="item"><b>APIs and formats</b><span>REST APIs, JSON, Postman</span></div>
+<div class="item"><b>Databases</b><span>SQL, MySQL</span></div>
+<div class="item"><b>Developer tools</b><span>Git, GitHub, Docker</span></div>
+<div class="item"><b>Practices</b><span>Object-oriented programming, clean code, SOLID concepts, unit testing</span></div>
+<div class="item"><b>Teamwork</b><span>Scrum, Kanban, documentation, collaboration</span></div>
+<p class="mute" style="font-size:15px;margin-top:14px">I keep deepening these through hands-on projects and feedback. My depth varies across technologies.</p>
+</div></div></section>
+
+<section id="approach"><div class="row"><h2>How I work</h2><div class="steps">
+<div class="item"><b>Understand</b><span>Clarify the need before choosing an implementation. Good engineering starts with the problem, not just the code.</span></div>
+<div class="item"><b>Investigate</b><span>Break down unfamiliar problems, test assumptions, debug systematically and learn from evidence.</span></div>
+<div class="item"><b>Build</b><span>Connect technical decisions to usability, practical outcomes and the people who will use the solution.</span></div>
+<div class="item"><b>Collaborate</b><span>Share context, document decisions, communicate clearly and use feedback to move work forward.</span></div>
+<div class="item"><b>Improve</b><span>Treat iteration as part of the process and make each solution more reliable and useful.</span></div>
+</div></div></section>
+</main>
+
+<div class="contact" id="contact"><div class="wrap">
+<h2>Have an interesting problem to solve?</h2>
+<p class="lead" style="margin-top:0">I’m looking for opportunities to learn from strong engineering teams, contribute to useful products and grow at the intersection of software, AI and problem-solving.</p>
+<div class="cta">
+<a class="btn p" href="mailto:jhenicefranca@gmail.com?subject=Professional%20Opportunity%20%7C%20Tabata%20Franca&body=Hello%20Tabata%2C%0A%0AI%20came%20across%20your%20GitHub%20portfolio%20and%20would%20like%20to%20connect.%0A%0ABest%20regards%2C">Send an email</a>
+<a class="btn" href="https://www.linkedin.com/in/tabatajhenice/" target="_blank" rel="noopener">LinkedIn</a></div>
+<p class="mute" style="margin-top:18px;font-size:15px">Prefer to copy the address? jhenicefranca@gmail.com</p>
+</div></div>
+<footer><div class="wrap">Tábata França · Curiosity to investigate. Discipline to build. Purpose to improve.</div></footer>
+
+<dialog id="lb"><img alt=""></dialog>
+
+<script>
+(function(){
+var c=document.getElementById('wave'),x=c.getContext('2d'),w,h,t=0,
+rm=matchMedia('(prefers-reduced-motion: reduce)').matches;
+function size(){var r=devicePixelRatio||1;w=c.clientWidth;h=c.clientHeight;c.width=w*r;c.height=h*r;x.setTransform(r,0,0,r,0,0)}
+function draw(){
+x.clearRect(0,0,w,h);
+var L=[[.9,.012,1.0,'rgba(34,211,238,.95)',2],[.55,.021,1.7,'rgba(34,211,238,.45)',1.5],[.3,.034,2.4,'rgba(10,102,194,.8)',1.5]];
+L.forEach(function(l){x.beginPath();x.strokeStyle=l[3];x.lineWidth=l[4];
+for(var i=0;i<=w;i+=3){var e=Math.sin(i/w*Math.PI),
+y=h/2+Math.sin(i*l[1]+t*l[2])*Math.sin(i*.004+t*.6)*h*.38*l[0]*(.35+.65*e);
+i?x.lineTo(i,y):x.moveTo(i,y)}x.stroke()});
+if(!rm){t+=.03;requestAnimationFrame(draw)}}
+size();draw();addEventListener('resize',function(){size();if(rm)draw()});
+var d=document.getElementById('lb'),im=d.querySelector('img');
+document.querySelectorAll('.gal button').forEach(function(b){b.addEventListener('click',function(){
+var s=b.querySelector('img');im.src=s.src;im.alt=s.alt;d.showModal()})});
+d.addEventListener('click',function(){d.close()});
+})();
+</script>
+</body>
+</html>
