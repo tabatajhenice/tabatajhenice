@@ -23,14 +23,14 @@ My experience spans software engineering, artificial intelligence, educational t
 
 ## 🚀 Featured Projects & Experience
 
-Below are the main technical projects I have developed. Click on each link to see the full documentation, system walkthroughs, and screenshots.
+Below are the main technical projects I have developed. Click on each link to see the full documentation, source code, and repositories.
 
 *   **[🤖 ARM-ALPHA — Assistive Technology & AI](https://github.com)**
     An assistive technology solution designed to help people with hearing impairments perceive environmental sounds through vibration-based alerts. Built with Python and Machine Learning (95% accuracy).
-*   **[📦 Inventory Management System](https://github.com)**
-    A web-based system for inventory tracking and asset management. Developed with a C# backend and MySQL relational database.
 *   **[📚 MPROVA — Educational Platform](https://github.com)**
     An educational initiative using web technologies (TypeScript/JavaScript) to democratize academic opportunities across 5 partner public schools.
+*   **[📦 Inventory Management System](https://github.com)**
+    A web-based system for inventory tracking and asset management. Developed with a C# backend and MySQL relational database.
 *   **[💻 BRASA — Software Engineering Projects](https://github.com)**
     Contributions to software development within a global network, utilizing Docker environments and agile methodologies.
 
@@ -48,3 +48,4 @@ Below are the main technical projects I have developed. Click on each link to se
 - **LinkedIn:** [Connect with me](https://linkedin.com)
 - **GitHub:** [Explore my projects](https://github.com)
 - **Email:** [jhenicefranca@gmail.com](mailto:jhenicefranca@gmail.com)
+
